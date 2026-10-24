@@ -1,0 +1,190 @@
+/* File: assets/css/vizous-tokens.css
+   Vizous Interio theme: black + signature orange.
+   Layout, spacing, typography and existing component structure remain unchanged. */
+:root {
+  --color-alabaster: #FAF8F5;
+  --color-sand: #F2ECE4;
+  --color-taupe: #E5DEC9;
+  --color-charcoal: #171717;
+  --color-olive-700: #303030;
+  --color-olive-800: #171717;
+  --color-olive-900: #0A0A0A;
+  --color-walnut-500: #FE8801;
+  --color-walnut-600: #E07700;
+  --color-walnut-700: #B85F00;
+  --color-brand-orange: #FE8801;
+  --color-brand-orange-hover: #E07700;
+  --color-brand-black: #000000;
+}
+
+body {
+  background-color: var(--color-alabaster);
+  color: var(--color-charcoal);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+.font-editorial { font-family: 'Cormorant Garamond', Georgia, serif; }
+.font-handwriting { font-family: 'Alex Brush', cursive; }
+
+/* Signature orange selection, consistent with header/footer */
+::selection {
+  background: var(--color-brand-orange);
+  color: #111111;
+}
+
+/* Smooth Editorial Image Hover Zoom */
+.editorial-zoom-img {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+.editorial-card:hover .editorial-zoom-img { transform: scale(1.045); }
+
+/* Scoped Homepage Services Editorial Showcase */
+.vz-service-card {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--color-charcoal);
+}
+.vz-service-img {
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              object-position 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+.vz-service-card:hover .vz-service-img,
+.vz-service-card:focus-visible .vz-service-img { transform: scale(1.06); }
+.vz-service-card--featured:hover .vz-service-img,
+.vz-service-card--featured:focus-visible .vz-service-img {
+  transform: scale(1.05);
+  object-position: 50% 42%;
+}
+.vz-service-overlay {
+  background: linear-gradient(to top,
+    rgba(10, 10, 10, 0.92) 0%,
+    rgba(10, 10, 10, 0.48) 45%,
+    rgba(10, 10, 10, 0.14) 100%);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.vz-service-card:hover .vz-service-overlay,
+.vz-service-card:focus-visible .vz-service-overlay {
+  background-color: rgba(10, 10, 10, 0.24);
+}
+.vz-service-arrow {
+  display: inline-block;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), color 0.35s ease;
+}
+.vz-service-card:hover .vz-service-arrow,
+.vz-service-card:focus-visible .vz-service-arrow { transform: translateX(5px); }
+
+/* Scroll-triggered reveals: support both current vz- and shared v- naming */
+.vz-reveal, .v-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--vz-delay, var(--v-delay, 0ms));
+}
+.vz-reveal.is-visible, .v-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Legacy Service Card Fallback & Project Gallery Hover */
+.service-card-img { transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1); }
+.service-card:hover .service-card-img { transform: scale(1.05); }
+.project-img { transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+.project-card:hover .project-img { transform: scale(1.04); }
+
+/* Navigation underline */
+.nav-link { position: relative; }
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+  background-color: var(--color-brand-orange);
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+/* FAQ accordion */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+  opacity: 0;
+}
+.faq-item.open .faq-answer { max-height: 480px; opacity: 1; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+
+/* Subtle entrance animation */
+.fade-in { animation: fadeIn 0.4s ease-out forwards; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Orange focus ring, including form controls */
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--color-brand-orange);
+  outline-offset: 2px;
+}
+
+/* Shared motion system cursor */
+.v-custom-cursor, .v-custom-cursor * { cursor: none !important; }
+.v-cursor-dot, .v-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  pointer-events: none;
+  border-radius: 50%;
+  will-change: transform;
+}
+.v-cursor-dot {
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  background: var(--color-brand-orange);
+}
+.v-cursor-ring {
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  border: 1px solid rgba(254, 136, 1, 0.75);
+  transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+.v-cursor-hover .v-cursor-ring {
+  width: 48px;
+  height: 48px;
+  margin: -24px 0 0 -24px;
+  border-color: var(--color-brand-orange);
+  background: rgba(254, 136, 1, 0.08);
+}
+.v-cursor-glow {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(254, 136, 1, 0.12) 0%, rgba(254, 136, 1, 0.045) 38%, transparent 72%);
+  opacity: 0.9;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .editorial-zoom-img, .vz-service-img, .vz-service-overlay, .vz-service-arrow,
+  .vz-reveal, .v-reveal, .service-card-img, .project-img, .fade-in {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+  .vz-reveal, .v-reveal { opacity: 1 !important; }
+  .v-cursor-dot, .v-cursor-ring, .v-cursor-glow { display: none !important; }
+}

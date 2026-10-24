@@ -1,0 +1,65 @@
+/* Vizous Interio — orange theme override for the Modular Furniture service page.
+   Load after vizous-tokens.css and vizous-motion.css. */
+
+:root {
+  --v-ink: #1D211F;
+  --v-walnut: #FE8801;
+  --v-cream: #F2ECE4;
+  --v-motion-ease: cubic-bezier(.22, .61, .36, 1);
+  --v-orange: #FE8801;
+  --v-orange-hover: #E07700;
+}
+
+.v-eyebrow,
+.v-feature-list li > span,
+.v-step > span {
+  color: var(--v-orange);
+}
+
+.v-cursor-glow {
+  background: radial-gradient(circle, rgba(254, 136, 1, .18), rgba(254, 136, 1, 0) 68%);
+}
+
+.v-button:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline-color: var(--v-orange);
+}
+
+.v-card-copy span {
+  color: #FE8801;
+}
+
+.v-card-arrow {
+  border-color: rgba(254, 136, 1, .7);
+}
+
+.v-card:hover .v-card-arrow {
+  background: rgba(254, 136, 1, .18);
+}
+
+.v-feature-list li > span,
+.v-step > span {
+  color: var(--v-orange-hover);
+}
+
+@media (pointer:fine) and (min-width:900px) {
+  .v-cursor-dot {
+    background: #FE8801;
+  }
+
+  .v-cursor-ring {
+    border-color: rgba(254, 136, 1, .9);
+  }
+
+  body.v-cursor-hover .v-cursor-ring {
+    background: rgba(254, 136, 1, .14);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

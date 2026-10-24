@@ -1,0 +1,2278 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TV Units & Media Walls in Bhubaneswar | Vizous Interio</title>
+    <meta name="description"
+        content="Custom TV units in Bhubaneswar: floating consoles, full-height media walls, fluted panel walls, display niches and compact units. Designed and made by Vizous Interio." />
+    <link rel="canonical" href="https://vizous.in/services/modular-furniture/tv-units-media-walls/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/vizous-tokens.css" />
+    <link rel="stylesheet" href="/assets/css/vizous-motion.css" />
+    <link rel="stylesheet" href="/assets/css/vizous-orange-theme.css" />
+    <script>document.documentElement.classList.add('js')</script>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { alabaster: '#FAF8F5', sand: '#F2ECE4', charcoal: '#1D211F', olive: { 700: '#35403A', 800: '#242C28', 900: '#191E1B' }, walnut: { 500: '#FE8801', 600: '#E07700', 700: '#B85F00' } }, fontFamily: { serif: ['"Cormorant Garamond"', 'Georgia', 'serif'], sans: ['"Inter"', 'system-ui', 'sans-serif'] } } } };
+    </script>
+    <style>
+        /* ===== TV page (v-tv-*) ===== */
+        .sc {
+            --wall: #ebe4d9;
+            --floor: #c9bda9;
+            --w1: #6b4a2f;
+            --w2: #7d583a;
+            --w3: #573a24;
+            --nb: #3f2a19
+        }
+
+        .sc[data-f=oak] {
+            --w1: #b88a58;
+            --w2: #c79b69;
+            --w3: #a37846;
+            --nb: #6e4d2a
+        }
+
+        .sc[data-f=charcoal] {
+            --w1: #2b302d;
+            --w2: #363c38;
+            --w3: #1f2321;
+            --nb: #141715;
+            --wall: #d8d0c3
+        }
+
+        .sc[data-f=teak] {
+            --w1: #8a5a35;
+            --w2: #9b6841;
+            --w3: #744a2a;
+            --nb: #472c18
+        }
+
+        .sc[data-f=ivory] {
+            --w1: #e4d9c6;
+            --w2: #d3c5ad;
+            --w3: #c4b497;
+            --nb: #a99a80;
+            --wall: #e3dacd;
+            --floor: #bfae96
+        }
+
+        .wl {
+            fill: var(--wall)
+        }
+
+        .fl {
+            fill: var(--floor)
+        }
+
+        .sk {
+            fill: rgba(0, 0, 0, .12)
+        }
+
+        .w1 {
+            fill: var(--w1)
+        }
+
+        .w2 {
+            fill: var(--w2)
+        }
+
+        .w3 {
+            fill: var(--w3)
+        }
+
+        .nb {
+            fill: var(--nb)
+        }
+
+        .hd {
+            fill: rgba(255, 255, 255, .55)
+        }
+
+        .gv {
+            fill: rgba(0, 0, 0, .3)
+        }
+
+        .dc {
+            fill: #d9c8ad
+        }
+
+        .lf {
+            fill: #5f7a52
+        }
+
+        .lamp {
+            fill: #f3d9ae
+        }
+
+        .dr {
+            transition: transform .5s cubic-bezier(.22, .61, .36, 1)
+        }
+
+        .v-tv-vis:hover .dr {
+            transform: translateY(5px)
+        }
+
+        .led,
+        .halo {
+            opacity: 0;
+            transition: opacity 1s ease .4s
+        }
+
+        .halo {
+            filter: blur(5px)
+        }
+
+        .in .led {
+            opacity: 1
+        }
+
+        .in .halo {
+            opacity: .7;
+            animation: vTvPulse 4s ease-in-out 1.5s infinite
+        }
+
+        @keyframes vTvPulse {
+            50% {
+                opacity: .3
+            }
+        }
+
+        .sheen {
+            animation: vTvSheen 5s linear infinite
+        }
+
+        @keyframes vTvSheen {
+            from {
+                transform: translateX(0)
+            }
+
+            to {
+                transform: translateX(330px)
+            }
+        }
+
+        .sweep {
+            animation: vTvSweep 6s ease-in-out infinite
+        }
+
+        @keyframes vTvSweep {
+            from {
+                transform: translateX(0)
+            }
+
+            to {
+                transform: translateX(300px)
+            }
+        }
+
+        .v-tv-scene {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            background: #ebe4d9
+        }
+
+        .v-tv-scene svg {
+            display: block;
+            width: 100%;
+            height: 100%
+        }
+
+        .v-tv-photo {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity .6s
+        }
+
+        .has-photo .v-tv-photo {
+            opacity: 1
+        }
+
+        .has-photo svg,
+        .has-photo .v-tv-pt {
+            display: none
+        }
+
+        /* Hero: coverflow slider */
+        .v-tv-hero {
+            background: radial-gradient(70% 60% at 50% 105%, rgba(254, 136, 1, .22), transparent 70%), #191E1B;
+            color: #fff;
+            overflow: hidden
+        }
+
+        .v-tv-stage {
+            position: relative;
+            overflow: hidden;
+            padding: 14px 0 6px;
+            outline-offset: 6px;
+            touch-action: pan-y
+        }
+
+        .v-tv-track {
+            display: flex;
+            gap: 24px;
+            transition: transform .95s cubic-bezier(.22, .61, .36, 1);
+            will-change: transform
+        }
+
+        .v-tv-slide {
+            flex: none;
+            width: min(600px, 80vw);
+            transform: scale(.84);
+            opacity: .38;
+            transition: transform .95s cubic-bezier(.22, .61, .36, 1), opacity .6s;
+            cursor: pointer;
+            box-shadow: 0 40px 60px -35px rgba(0, 0, 0, .8)
+        }
+
+        .v-tv-slide.is-active {
+            transform: scale(1);
+            opacity: 1;
+            cursor: default
+        }
+
+        .v-tv-slide .v-tv-scene {
+            pointer-events: none
+        }
+
+        .v-tv-cap {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            border-top: 1px solid rgba(255, 255, 255, .18);
+            padding-top: 18px;
+            margin-top: 22px
+        }
+
+        .v-tv-capn {
+            font: 500 clamp(26px, 3vw, 38px)/1 "Cormorant Garamond", Georgia, serif;
+            transition: opacity .35s, transform .5s cubic-bezier(.22, .61, .36, 1)
+        }
+
+        .v-tv-cap.swap .v-tv-capn,
+        .v-tv-cap.swap .v-tv-caps {
+            opacity: 0;
+            transform: translateY(10px)
+        }
+
+        .v-tv-caps {
+            font: 300 13px/1.5 Inter, sans-serif;
+            color: rgba(255, 255, 255, .7);
+            margin-top: 6px;
+            transition: opacity .35s .05s, transform .5s .05s
+        }
+
+        .v-tv-arrow {
+            width: 48px;
+            height: 48px;
+            border: 1px solid rgba(255, 255, 255, .4);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            transition: background .25s, transform .25s
+        }
+
+        .v-tv-arrow:hover {
+            background: #FE8801;
+            color: #000;
+            border-color: #FE8801;
+            transform: scale(1.06)
+        }
+
+        .v-tv-dots {
+            display: flex;
+            gap: 8px;
+            margin-top: 20px
+        }
+
+        .v-tv-dot {
+            flex: 1;
+            height: 22px;
+            display: flex;
+            align-items: center
+        }
+
+        .v-tv-dot i {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: rgba(255, 255, 255, .22);
+            position: relative;
+            overflow: hidden
+        }
+
+        .v-tv-dot i::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: #FE8801;
+            transform: scaleX(0);
+            transform-origin: left
+        }
+
+        .v-tv-dot.on i::after {
+            animation: vTvFill 5.5s linear forwards
+        }
+
+        .v-tv-dot.done i::after {
+            transform: scaleX(1)
+        }
+
+        .v-tv-stage.paused~.v-tv-dots .on i::after,
+        .v-tv-hero.paused .v-tv-dot.on i::after {
+            animation-play-state: paused
+        }
+
+        @keyframes vTvFill {
+            to {
+                transform: scaleX(1)
+            }
+        }
+
+        /* Marquee */
+        .v-tv-mq {
+            background: #FE8801;
+            color: #111;
+            overflow: hidden;
+            white-space: nowrap
+        }
+
+        .v-tv-mq div {
+            display: inline-flex;
+            animation: vTvMq 38s linear infinite
+        }
+
+        .v-tv-mq span {
+            padding: 14px 28px;
+            font: 500 13px/1 Inter, sans-serif
+        }
+
+        .v-tv-mq span::after {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #111;
+            margin-left: 56px;
+            vertical-align: middle
+        }
+
+        @keyframes vTvMq {
+            to {
+                transform: translateX(-50%)
+            }
+        }
+
+        /* Tabs */
+        .v-tv-tabs {
+            position: sticky;
+            top: 80px;
+            z-index: 30;
+            background: rgba(250, 248, 245, .94);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(29, 33, 31, .12)
+        }
+
+        .v-tv-tabs nav {
+            position: relative;
+            display: flex;
+            gap: 6px;
+            overflow-x: auto;
+            scrollbar-width: none
+        }
+
+        .v-tv-tab {
+            flex: none;
+            padding: 18px 16px;
+            font: 500 12px/1 Inter, sans-serif;
+            color: #716d66;
+            transition: color .25s
+        }
+
+        .v-tv-tab:hover,
+        .v-tv-tab.is-on {
+            color: #1D211F
+        }
+
+        .v-tv-bar {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 0;
+            background: #FE8801;
+            transition: transform .45s cubic-bezier(.22, .61, .36, 1), width .45s cubic-bezier(.22, .61, .36, 1)
+        }
+
+        /* Product sections */
+        .v-tv-vis {
+            position: relative;
+            box-shadow: 0 40px 70px -40px rgba(0, 0, 0, .5);
+            border-radius: 3px;
+            overflow: hidden
+        }
+
+        .v-tv-pt {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            height: 30px;
+            min-width: 30px;
+            padding: 0 8px;
+            border-radius: 999px;
+            background: #FE8801;
+            color: #000;
+            border: 2px solid #fff;
+            font: 600 12px/1 Inter, sans-serif;
+            cursor: pointer;
+            z-index: 3
+        }
+
+        .v-tv-pt em {
+            max-width: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            font-style: normal;
+            transition: max-width .5s cubic-bezier(.22, .61, .36, 1), margin .5s
+        }
+
+        .v-tv-pt.is-on em {
+            max-width: 170px;
+            margin-left: 8px;
+            margin-right: 2px
+        }
+
+        .v-tv-pt::after {
+            content: "";
+            position: absolute;
+            inset: -6px;
+            border-radius: 999px;
+            border: 2px solid #FE8801;
+            opacity: 0
+        }
+
+        .v-tv-pt.is-on::after {
+            animation: vTvPing 1.8s ease-out infinite
+        }
+
+        @keyframes vTvPing {
+            from {
+                opacity: .8;
+                transform: scale(.85)
+            }
+
+            to {
+                opacity: 0;
+                transform: scale(1.35)
+            }
+        }
+
+        .v-tv-pl {
+            border-top: 1px solid rgba(29, 33, 31, .16)
+        }
+
+        .v-tv-pl li {
+            display: flex;
+            gap: 16px;
+            padding: 15px 0 15px 14px;
+            border-bottom: 1px solid rgba(29, 33, 31, .16);
+            border-left: 3px solid transparent;
+            cursor: pointer;
+            transition: background .3s, border-color .3s, padding .4s cubic-bezier(.22, .61, .36, 1)
+        }
+
+        .v-tv-pl li b {
+            flex: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: #e8e0d3;
+            font: 600 11px/1 Inter, sans-serif;
+            transition: background .3s
+        }
+
+        .v-tv-pl li strong {
+            font: 500 15px/1.4 Inter, sans-serif
+        }
+
+        .v-tv-pl li p {
+            margin-top: 2px;
+            color: #716d66;
+            font: 300 12px/1.6 Inter, sans-serif
+        }
+
+        .v-tv-pl li.is-on {
+            background: #FFF4E8;
+            border-left-color: #FE8801;
+            padding-left: 20px
+        }
+
+        .v-tv-pl li.is-on b {
+            background: #FE8801
+        }
+
+        /* Slide-in reveals */
+        .js [data-r] {
+            opacity: 0;
+            transition: opacity .9s cubic-bezier(.22, .61, .36, 1) var(--d, 0s), transform 1s cubic-bezier(.22, .61, .36, 1) var(--d, 0s)
+        }
+
+        .js [data-r=l] {
+            transform: translateX(-70px)
+        }
+
+        .js [data-r=r] {
+            transform: translateX(70px)
+        }
+
+        .js [data-r=u] {
+            transform: translateY(30px)
+        }
+
+        .js [data-r].in {
+            opacity: 1;
+            transform: none
+        }
+
+        .v-tv-table {
+            width: 100%;
+            min-width: 640px;
+            border-collapse: collapse;
+            font: 400 13px/1.5 Inter, sans-serif
+        }
+
+        .v-tv-table th,
+        .v-tv-table td {
+            text-align: left;
+            padding: 16px 18px 16px 0;
+            border-bottom: 1px solid #d9d1c7;
+            vertical-align: top
+        }
+
+        .v-tv-table thead th {
+            font: 500 11px/1 Inter, sans-serif;
+            color: #B85F00
+        }
+
+        .v-tv-table tbody th {
+            font: 500 24px/1.1 "Cormorant Garamond", Georgia, serif
+        }
+
+        .v-tv-table tbody tr:hover {
+            background: #FFF4E8
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+
+            .v-tv-track,
+            .v-tv-slide,
+            .v-tv-bar,
+            .v-tv-pt em {
+                transition: none !important
+            }
+
+            .sheen,
+            .sweep,
+            .v-tv-mq div,
+            .halo,
+            .v-tv-pt::after {
+                animation: none !important
+            }
+
+            .js [data-r] {
+                opacity: 1;
+                transform: none;
+                transition: none
+            }
+
+            .led {
+                opacity: 1
+            }
+
+            .v-tv-dot i::after {
+                transform: scaleX(1);
+                animation: none !important
+            }
+        }
+
+        .v-tv-slide .led {
+            opacity: 1
+        }
+
+        .v-tv-slide .halo {
+            opacity: .7;
+            animation: vTvPulse 4s ease-in-out infinite
+        }
+
+        /* Scroll progress */
+        #tv-prog {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            z-index: 60;
+            background: #FE8801;
+            transform: scaleX(0);
+            transform-origin: left;
+            pointer-events: none
+        }
+
+        /* Hero video bg */
+        .v-tv-hero {
+            position: relative;
+            isolation: isolate
+        }
+
+        .v-tv-bg {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            overflow: hidden
+        }
+
+        .v-tv-bg video {
+            position: absolute;
+            inset: -8% 0;
+            width: 100%;
+            height: 116%;
+            object-fit: cover;
+            opacity: .3;
+            will-change: transform
+        }
+
+        .v-tv-bgshade {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(25, 30, 27, .55), #191E1B 92%)
+        }
+
+        /* Pinned scroll story */
+        .v-tv-story {
+            position: relative;
+            height: 340vh;
+            background: #FAF8F5
+        }
+
+        .v-tv-pin {
+            position: sticky;
+            top: 80px;
+            height: calc(100vh - 80px);
+            overflow: hidden;
+            display: flex;
+            align-items: center
+        }
+
+        .v-tv-frame {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            background: #191E1B;
+            clip-path: inset(var(--ins, 14%) round var(--rad, 28px));
+            will-change: clip-path
+        }
+
+        .v-tv-frame video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(var(--vs, 1.2));
+            will-change: transform
+        }
+
+        .v-tv-frameshade {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(16, 20, 17, .85), rgba(16, 20, 17, .35) 70%, rgba(16, 20, 17, .2))
+        }
+
+        .v-tv-copy {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: 0 clamp(28px, 7vw, 110px)
+        }
+
+        .v-tv-copy h2 span {
+            display: inline-block;
+            opacity: .16;
+            transform: translateY(10px);
+            margin-right: .22em;
+            transition: opacity .25s, transform .25s
+        }
+
+        .v-tv-copy h2 span.on {
+            opacity: 1;
+            transform: none
+        }
+
+        .v-tv-ss {
+            max-width: 30rem
+        }
+
+        .v-tv-ss li {
+            display: flex;
+            gap: 14px;
+            align-items: baseline;
+            padding: 11px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .18);
+            color: rgba(255, 255, 255, .38);
+            font: 400 14px/1.5 Inter, sans-serif;
+            transition: color .5s, padding .5s cubic-bezier(.22, .61, .36, 1), border-color .5s
+        }
+
+        .v-tv-ss li b {
+            font: 600 11px/1 Inter, sans-serif;
+            color: #FE8801;
+            opacity: .5
+        }
+
+        .v-tv-ss li.is-on {
+            color: #fff;
+            padding-left: 12px;
+            border-bottom-color: #FE8801
+        }
+
+        .v-tv-ss li.is-on b {
+            opacity: 1
+        }
+
+        .v-tv-led {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 4px;
+            background: rgba(0, 0, 0, .08);
+            z-index: 3
+        }
+
+        .v-tv-led i {
+            display: block;
+            height: 100%;
+            width: 100%;
+            background: #FE8801;
+            box-shadow: 0 0 18px #FE8801;
+            transform: scaleX(0);
+            transform-origin: left
+        }
+
+        /* Photo pair with parallax */
+        .v-tv-pair {
+            position: relative;
+            padding-bottom: 60px
+        }
+
+        .v-tv-p1 {
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: #242C28
+        }
+
+        .v-tv-p2 {
+            position: absolute;
+            right: -8px;
+            bottom: 0;
+            width: 46%;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            border: 8px solid #191E1B;
+            background: #242C28
+        }
+
+        .v-tv-pair img {
+            display: block;
+            width: 100%;
+            height: 122%;
+            margin-top: -11%;
+            object-fit: cover;
+            will-change: transform
+        }
+
+        .v-tv-vis svg,
+        .v-tv-vis .v-tv-photo {
+            will-change: transform
+        }
+
+        @media(max-width:800px) {
+            .v-tv-story {
+                height: 300vh
+            }
+
+            .v-tv-ss li {
+                font-size: 13px
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            .v-tv-story {
+                height: auto
+            }
+
+            .v-tv-pin {
+                position: static;
+                height: auto;
+                min-height: 70vh;
+                padding: 80px 0
+            }
+
+            .v-tv-frame {
+                clip-path: none
+            }
+
+            .v-tv-copy h2 span {
+                opacity: 1;
+                transform: none
+            }
+
+            .v-tv-led i {
+                transform: none
+            }
+
+            #tv-prog {
+                display: none
+            }
+        }
+    </style>
+</head>
+
+<body class="antialiased bg-alabaster text-charcoal">
+
+    <!-- SECTION 1: STICKY HEADER & NAVIGATION -->
+    <header id="site-header" class="sticky top-0 z-40 bg-black border-b border-neutral-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="/" class="flex items-center h-full py-2 group focus:outline-none" aria-label="Vizous Interio Home">
+                <img src="/assets/images/logo2.png" alt="Vizous - Exploring Frontiers | Kitchen, Wardrobe, Furniture"
+                    class="h-full max-h-14 sm:max-h-16 w-auto object-contain block" />
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-normal text-stone-200"
+                aria-label="Main Navigation">
+                <a href="/#home" class="nav-link active text-[#FE8801] font-medium py-1">Home</a>
+                <a href="/#about" class="nav-link hover:text-[#FE8801] transition-colors py-1">About Us</a>
+                <div class="relative group">
+                    <a href="/services/"
+                        class="nav-link hover:text-[#FE8801] inline-flex items-center gap-1.5 transition-colors py-1">
+                        <span>Services</span>
+                        <svg class="w-3.5 h-3.5 text-stone-400 group-hover:rotate-180 transition-transform" fill="none"
+                            stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
+                    <!-- Services Dropdown -->
+                    <div
+                        class="absolute left-0 top-full pt-3 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-black border border-neutral-800 shadow-xl rounded-sm py-2">
+                            <a href="/services/"
+                                class="block px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#FE8801] border-b border-neutral-800 hover:bg-neutral-900">
+                                All Interior Services
+                            </a>
+                            <a href="/services/modular-kitchen/"
+                                class="block px-4 py-2.5 text-xs text-stone-200 hover:bg-neutral-900 hover:text-[#FE8801] transition-colors">
+                                <span class="text-[10px] text-[#FE8801] font-mono mr-1.5">01.</span> Modular Kitchen
+                            </a>
+                            <a href="/services/wardrobe-design/"
+                                class="block px-4 py-2.5 text-xs text-stone-200 hover:bg-neutral-900 hover:text-[#FE8801] transition-colors">
+                                <span class="text-[10px] text-[#FE8801] font-mono mr-1.5">02.</span> Wardrobe Design
+                            </a>
+                            <a href="/services/office-furniture/"
+                                class="block px-4 py-2.5 text-xs text-stone-200 hover:bg-neutral-900 hover:text-[#FE8801] transition-colors">
+                                <span class="text-[10px] text-[#FE8801] font-mono mr-1.5">03.</span> Office Furniture
+                            </a>
+                            <a href="/services/modular-furniture/"
+                                class="block px-4 py-2.5 text-xs text-stone-200 hover:bg-neutral-900 hover:text-[#FE8801] transition-colors">
+                                <span class="text-[10px] text-[#FE8801] font-mono mr-1.5">04.</span> Modular Furniture
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="/#projects" class="nav-link hover:text-[#FE8801] transition-colors py-1">Projects</a>
+                <a href="/#blog" class="nav-link hover:text-[#FE8801] transition-colors py-1">Blog</a>
+                <a href="/#contact" class="nav-link hover:text-[#FE8801] transition-colors py-1">Contact</a>
+            </nav>
+
+            <!-- Desktop CTA & Mobile Menu Button -->
+            <div class="flex items-center gap-3">
+                <a href="tel:+919938117844"
+                    class="hidden xl:inline-flex items-center gap-1.5 text-xs font-medium text-stone-200 hover:text-[#FE8801] transition-colors mr-1">
+                    <svg class="w-3.5 h-3.5 text-[#FE8801]" fill="none" stroke="currentColor" stroke-width="1.8"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    <span>+91-9938117844</span>
+                </a>
+
+                <button id="header-consult-btn" type="button" data-open-consult data-service="TV Units & Media Walls"
+                    class="hidden sm:inline-flex items-center gap-2.5 bg-[#FE8801] hover:bg-[#E07700] text-black text-xs sm:text-sm font-medium px-5 py-2.5 rounded-full transition-all duration-300 shadow-sm hover:shadow">
+                    <span>Get a Free Consultation</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6" />
+                    </svg>
+                </button>
+
+                <button id="mobile-menu-btn" type="button" aria-expanded="false"
+                    class="lg:hidden p-2.5 rounded-md text-white hover:bg-neutral-800 focus:outline-none"
+                    aria-label="Toggle Menu">
+                    <svg id="mobile-menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+                    </svg>
+                    <svg id="mobile-menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor"
+                        stroke-width="1.8" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Responsive Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-black border-b border-neutral-800 px-6 pt-3 pb-6 space-y-3">
+            <div class="flex flex-col space-y-2 text-sm font-medium text-stone-100">
+                <a href="/#home" class="mobile-nav-link py-2 border-b border-neutral-800">Home</a>
+                <a href="/#about" class="mobile-nav-link py-2 border-b border-neutral-800">About Us</a>
+                <a href="/services/" class="py-2 border-b border-neutral-800 text-[#FE8801] font-semibold">Services Hub
+                    (/services/)</a>
+                <div class="pl-3 space-y-1.5 pb-2 border-b border-neutral-800">
+                    <a href="/services/modular-kitchen/" class="block py-1 text-xs text-stone-400">01. Modular
+                        Kitchen</a>
+                    <a href="/services/wardrobe-design/" class="block py-1 text-xs text-stone-400">02. Wardrobe
+                        Design</a>
+                    <a href="/services/office-furniture/" class="block py-1 text-xs text-stone-400">03. Office
+                        Furniture</a>
+                    <a href="/services/modular-furniture/" class="block py-1 text-xs text-stone-400">04. Modular
+                        Furniture</a>
+                </div>
+                <a href="/#projects" class="mobile-nav-link py-2 border-b border-neutral-800">Projects</a>
+                <a href="/#blog" class="mobile-nav-link py-2 border-b border-neutral-800">Blog</a>
+                <a href="/#contact" class="mobile-nav-link py-2">Contact</a>
+            </div>
+            <button id="mobile-consult-btn" type="button" data-open-consult data-service="TV Units & Media Walls"
+                class="w-full mt-2 inline-flex items-center justify-center gap-2 bg-[#FE8801] hover:bg-[#E07700] text-black text-sm font-medium px-5 py-3 rounded-full">
+                <span>Get a Free Consultation</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div id="tv-prog" aria-hidden="true"></div>
+    <main>
+        <section class="v-tv-hero pt-12 lg:pt-16 pb-14 lg:pb-20" id="tv-hero">
+            <div class="v-tv-bg" aria-hidden="true"><video data-par="70" autoplay muted loop playsinline
+                    preload="metadata"
+                    poster="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=85">
+                    <source src="/assets/10605591-uhd_3840_2160_30fps.mp4" type="video/mp4">
+                </video>
+                <div class="v-tv-bgshade"></div>
+            </div>
+            <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+                <nav aria-label="Breadcrumb" class="mb-8">
+                    <ol class="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[.22em] text-white/60">
+                        <li><a href="/" class="hover:text-white">Home</a></li>
+                        <li aria-hidden="true">/</li>
+                        <li><a href="/services/" class="hover:text-white">Services</a></li>
+                        <li aria-hidden="true">/</li>
+                        <li><a href="/services/modular-furniture/" class="hover:text-white">Modular Furniture</a></li>
+                        <li aria-hidden="true">/</li>
+                        <li aria-current="page" class="text-white">TV Units & Media Walls</li>
+                    </ol>
+                </nav>
+                <div class="grid lg:grid-cols-[1.3fr_1fr] gap-6 lg:gap-16 items-end mb-8 lg:mb-10">
+                    <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl leading-[.95] tracking-[-.03em]">TV units
+                        &amp; <em class="text-[#FE8801]">media walls</em></h1>
+                    <div>
+                        <p class="text-sm sm:text-base text-white/75 leading-relaxed max-w-md">Five ways to frame your
+                            screen. Each is designed to your wall, made in our Bhubaneswar factory and installed by our
+                            team.</p>
+                        <div class="mt-5 flex flex-wrap gap-3">
+                            <button type="button" data-open-consult data-service="TV Units & Media Walls"
+                                class="v-magnetic v-button bg-[#FE8801] text-black hover:bg-[#E07700]">Get a free
+                                consultation <span aria-hidden="true">↗</span></button>
+                            <a href="#compare" class="v-button v-button-outline">Compare types</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="v-tv-stage" id="tv-stage" tabindex="0" role="region" aria-roledescription="carousel"
+                aria-label="TV unit types">
+                <div class="v-tv-track" id="tv-track">
+                    <div class="v-tv-slide is-active" data-name="Floating TV Console"
+                        data-short="Wall-hung and light, it keeps the floor clear." data-href="#floating">
+                        <div class="v-tv-scene sc" data-f="walnut"><svg viewBox="0 0 400 300" role="img"
+                                aria-label="Floating TV Console illustration" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="s20" x1="0" y1="0" x2="1" y2="1">
+                                        <stop offset="0" stop-color="#ff9d3d" />
+                                        <stop offset=".55" stop-color="#7a3b00" />
+                                        <stop offset="1" stop-color="#1b1210" />
+                                    </linearGradient>
+                                    <linearGradient id="w20" x1="0" x2="1">
+                                        <stop offset="0" stop-color="#fff" stop-opacity="0" />
+                                        <stop offset=".5" stop-color="#fff" stop-opacity=".22" />
+                                        <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                                    </linearGradient>
+                                </defs>
+                                <rect class="wl" width="400" height="300" />
+                                <rect class="fl" y="252" width="400" height="48" />
+                                <rect class="sk" y="250" width="400" height="3" />
+                                <g>
+                                    <rect x="122" y="53" width="156" height="94" rx="2" fill="#0a0c0b" />
+                                    <clipPath id="t20">
+                                        <rect x="125" y="56" width="150" height="88" />
+                                    </clipPath>
+                                    <rect x="125" y="56" width="150" height="88" fill="url(#s20)" />
+                                    <g clip-path="url(#t20)">
+                                        <g class="sheen">
+                                            <rect x="-25" y="56" width="68" height="88" fill="#fff" opacity=".16"
+                                                transform="skewX(-18)" />
+                                        </g>
+                                    </g>
+                                </g>
+                                <rect class="w1" x="70" y="168" width="260" height="28" rx="2" />
+                                <rect class="dr w2" x="74" y="171" width="82" height="22" />
+                                <rect class="dr w2" x="159" y="171" width="82" height="22" />
+                                <rect class="dr w2" x="244" y="171" width="82" height="22" />
+                                <rect class="hd" x="106" y="180" width="20" height="2" />
+                                <rect class="hd" x="191" y="180" width="20" height="2" />
+                                <rect class="hd" x="276" y="180" width="20" height="2" />
+                                <rect class="halo" x="74" y="199" width="252" height="4" rx="2" fill="#FE8801" />
+                                <rect class="led" x="74" y="199" width="252" height="2" rx="1" fill="#ffd9a8" />
+                                <rect class="w2" x="92" y="152" width="18" height="16" rx="2" />
+                                <rect class="w2" x="338" y="226" width="18" height="26" />
+                                <path class="lf" d="M347 226 q-16 -28 -4 -52 q18 22 4 52z" />
+                                <path class="lf" d="M347 226 q14 -22 10 -42 q-16 16 -10 42z" />
+                            </svg></div>
+                    </div>
+                    <div class="v-tv-slide" data-name="Full-height Media Wall"
+                        data-short="Storage, display and TV in one composition." data-href="#full-height">
+                        <div class="v-tv-scene sc" data-f="oak"><svg viewBox="0 0 400 300" role="img"
+                                aria-label="Full-height Media Wall illustration" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="s21" x1="0" y1="0" x2="1" y2="1">
+                                        <stop offset="0" stop-color="#ff9d3d" />
+                                        <stop offset=".55" stop-color="#7a3b00" />
+                                        <stop offset="1" stop-color="#1b1210" />
+                                    </linearGradient>
+                                    <linearGradient id="w21" x1="0" x2="1">
+                                        <stop offset="0" stop-color="#fff" stop-opacity="0" />
+                                        <stop offset=".5" stop-color="#fff" stop-opacity=".22" />
+                                        <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                                    </linearGradient>
+                                </defs>
+                                <rect class="wl" width="400" height="300" />
+                                <rect class="fl" y="252" width="400" height="48" />
+                                <rect class="sk" y="250" width="400" height="3" />
+                                <rect class="w1" x="30" y="14" width="340" height="238" />
+                                <rect class="w2" x="112" y="20" width="176" height="226" />
+                                <rect class="w3" x="36" y="20" width="33" height="226" />
+                                <rect class="w3" x="71" y="20" width="33" height="226" />
+                                <rect class="hd" x="64" y="126" width="2" height="22" />
+                                <rect class="hd" x="74" y="126" width="2" height="22" />
+                                <rect class="nb" x="294" y="20" width="70" height="226" />
+                                <rect class="w2" x="294" y="84" width="70" height="4" />
+                                <rect class="w2" x="294" y="148" width="70" height="4" />
+                                <rect class="w2" x="294" y="212" width="70" height="4" />
+                                <circle class="dc" cx="312" cy="70" r="9" />
+                                <rect class="dc" x="334" y="62" width="16" height="22" rx="2" />
+                                <rect class="dc" x="304" y="126" width="22" height="18" rx="2" />
+                                <circle class="dc" cx="344" cy="134" r="8" />
+                                <rect class="dc" x="318" y="190" width="30" height="18" rx="2" />
+                                <g>
+                                    <rect x="125" y="41" width="150" height="90" rx="2" fill="#0a0c0b" />
+                                    <clipPath id="t21">
+                                        <rect x="128" y="44" width="144" height="84" />
+                                    </clipPath>
+                                    <rect x="128" y="44" width="144" height="84" fill="url(#s21)" />
+                                    <g clip-path="url(#t21)">
+                                        <g class="sheen">
+                                            <rect x="-16" y="44" width="65" height="84" fill="#fff" opacity=".16"
+                                                transform="skewX(-18)" />
+                                        </g>
+                                    </g>
+                                </g>
+                                <rect class="w1" x="118" y="176" width="164" height="48" rx="2" />
+                                <rect class="dr w3" x="122" y="180" width="156" height="18" />
+                                <rect class="dr w3" x="122" y="202" width="156" height="18" />
+                                <rect class="halo" x="107" y="20" width="3" height="228" rx="2" fill="#FE8801" />
+                                <rect class="led" x="107" y="20" width="3" height="226" rx="1" fill="#ffd9a8" />
+                                <rect class="halo" x="289" y="20" width="3" height="228" rx="2" fill="#FE8801" />
+                                <rect class="led" x="289" y="20" width="3" height="226" rx="1" fill="#ffd9a8" />
+                            </svg></div>
+                    </div>
+                    <div class="v-tv-slide" data-name="Fluted Panel Wall"
+                        data-short="Vertical grooves that add depth behind the screen." data-href="#fluted">
+                        <div class="v-tv-scene sc" data-f="charcoal"><svg viewBox="0 0 400 300" role="img"
+                                aria-label="Fluted Panel Wall illustration" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="s22" x1="0" y1="0" x2="1" y2="1">
+                                        <stop offset="0" stop-color="#ff9d3d" />
+                                        <stop offset=".55" stop-color="#7a3b00" />
+                                        <stop offset="1" stop-color="#1b1210" />
+                                    </linearGradient>
+                                    <linearGradient id="w22" x1="0" x2="1">
+                                        <stop offset="0" stop-color="#fff" stop-opacity="0" />
+                                        <stop offset=".5" stop-color="#fff" stop-opacity=".22" />
+                                        <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                                    </linearGradient>
+                                </defs>
+                                <rect class="wl" width="400" height="300" />
+                                <rect class="fl" y="252" width="400" height="48" />
+                                <rect class="sk" y="250" width="400" height="3" />
+                                <rect class="w1" x="50" y="16" width="300" height="224" />
+                                <rect class="gv" x="54" y="16" width="3" height="224" />
+                                <rect class="gv" x="62" y="16" width="3" height="224" />
+                                <rect class="gv" x="70" y="16" width="3" height="224" />
+                                <rect class="gv" x="78" y="16" width="3" height="224" />
+                                <rect class="gv" x="86" y="16" width="3" height="224" />
+                                <rect class="gv" x="94" y="16" width="3" height="224" />
+                                <rect class="gv" x="102" y="16" width="3" height="224" />
+                                <rect class="gv" x="110" y="16" width="3" height="224" />
+                                <rect class="gv" x="118" y="16" width="3" height="224" />
+                                <rect class="gv" x="126" y="16" width="3" height="224" />
+                                <rect class="gv" x="134" y="16" width="3" height="224" />
+                                <rect class="gv" x="142" y="16" width="3" height="224" />
+                                <rect class="gv" x="150" y="16" width="3" height="224" />
+                                <rect class="gv" x="158" y="16" width="3" height="224" />
+                                <rect class="gv" x="166" y="16" width="3" height="224" />
+                                <rect class="gv" x="174" y="16" width="3" height="224" />
+                                <rect class="gv" x="182" y="16" width="3" height="224" />
+                                <rect class="gv" x="190" y="16" width="3" height="224" />
+                                <rect class="gv" x="198" y="16" width="3" height="224" />
+                                <rect class="gv" x="206" y="16" width="3" height="224" />
+                                <rect class="gv" x="214" y="16" width="3" height="224" />
+                                <rect class="gv" x="222" y="16" width="3" height="224" />
+                                <rect class="gv" x="230" y="16" width="3" height="224" />
+                                <rect class="gv" x="238" y="16" width="3" height="224" />
+                                <rect class="gv" x="246" y="16" width="3" height="224" />
+                                <rect class="gv" x="254" y="16" width="3" height="224" />
+                                <rect class="gv" x="262" y="16" width="3" height="224" />
+                                <rect class="gv" x="270" y="16" width="3" height="224" />
+                                <rect class="gv" x="278" y="16" width="3" height="224" />
+                                <rect class="gv" x="286" y="16" width="3" height="224" />
+                                <rect class="gv" x="294" y="16" width="3" height="224" />
+                                <rect class="gv" x="302" y="16" width="3" height="224" />
+                                <rect class="gv" x="310" y="16" width="3" height="224" />
+                                <rect class="gv" x="318" y="16" width="3" height="224" />
+                                <rect class="gv" x="326" y="16" width="3" height="224" />
+                                <rect class="gv" x="334" y="16" width="3" height="224" />
+                                <rect class="gv" x="342" y="16" width="3" height="224" />
+                                <clipPath id="p22">
+                                    <rect x="50" y="16" width="300" height="224" />
+                                </clipPath>
+                                <g clip-path="url(#p22)">
+                                    <g class="sweep">
+                                        <rect x="20" y="16" width="70" height="224" fill="url(#w22)" />
+                                    </g>
+                                </g>
+                                <g>
+                                    <rect x="127" y="47" width="146" height="88" rx="2" fill="#0a0c0b" />
+                                    <clipPath id="t22">
+                                        <rect x="130" y="50" width="140" height="82" />
+                                    </clipPath>
+                                    <rect x="130" y="50" width="140" height="82" fill="url(#s22)" />
+                                    <g clip-path="url(#t22)">
+                                        <g class="sheen">
+                                            <rect x="-10" y="50" width="63" height="82" fill="#fff" opacity=".16"
+                                                transform="skewX(-18)" />
+                                        </g>
+                                    </g>
+                                </g>
+                                <rect class="w2" x="100" y="166" width="200" height="24" rx="2" />
+                                <rect class="dr w3" x="104" y="169" width="94" height="18" />
+                                <rect class="dr w3" x="202" y="169" width="94" height="18" />
+                                <rect class="halo" x="104" y="193" width="192" height="4" rx="2" fill="#FE8801" />
+                                <rect class="led" x="104" y="193" width="192" height="2" rx="1" fill="#ffd9a8" />
+                                <rect class="w2" x="318" y="226" width="18" height="26" />
+                                <path class="lf" d="M327 226 q-16 -28 -4 -52 q18 22 4 52z" />
+                                <path class="lf" d="M327 226 q14 -22 10 -42 q-16 16 -10 42z" />
+                            </svg></div>
+                    </div>
+                    <div class="v-tv-slide" data-name="Niche & Display Wall"
+                        data-short="Open niches for décor, closed cabinets for the rest." data-href="#niche">
+                        <div class="v-tv-scene sc" data-f="teak"><svg viewBox="0 0 400 300" role="img"
+                                aria-label="Niche & Display Wall illustration" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="s23" x1="0" y1="0" x2="1" y2="1">
+                                        <stop offset="0" stop-color="#ff9d3d" />
+                                        <stop offset=".55" stop-color="#7a3b00" />
+                                        <stop offset="1" stop-color="#1b1210" />
+                                    </linearGradient>
+                                    <linearGradient id="w23" x1="0" x2="1">
+                                        <stop offset="0" stop-color="#fff" stop-opacity="0" />
+                                        <stop offset=".5" stop-color="#fff" stop-opacity=".22" />
+                                        <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                                    </linearGradient>
+                                </defs>
+                                <rect class="wl" width="400" height="300" />
+                                <rect class="fl" y="252" width="400" height="48" />
+                                <rect class="sk" y="250" width="400" height="3" />
+                                <rect class="w1" x="30" y="16" width="340" height="236" />
+                                <rect class="nb" x="42" y="26" width="84" height="64" />
+                                <circle class="led" cx="84" cy="30" r="2.5" fill="#ffd9a8" />
+                                <circle class="dc" cx="84" cy="72" r="14" />
+                                <rect class="nb" x="42" y="98" width="84" height="64" />
+                                <circle class="led" cx="84" cy="102" r="2.5" fill="#ffd9a8" />
+                                <rect class="dc" x="66" y="128" width="16" height="30" rx="2" />
+                                <rect class="dc" x="88" y="138" width="22" height="20" rx="2" />
+                                <rect class="nb" x="42" y="170" width="84" height="64" />
+                                <circle class="led" cx="84" cy="174" r="2.5" fill="#ffd9a8" />
+                                <rect class="dc" x="60" y="214" width="60" height="16" rx="2" />
+                                <g>
+                                    <rect x="143" y="37" width="118" height="72" rx="2" fill="#0a0c0b" />
+                                    <clipPath id="t23">
+                                        <rect x="146" y="40" width="112" height="66" />
+                                    </clipPath>
+                                    <rect x="146" y="40" width="112" height="66" fill="url(#s23)" />
+                                    <g clip-path="url(#t23)">
+                                        <g class="sheen">
+                                            <rect x="34" y="40" width="50" height="66" fill="#fff" opacity=".16"
+                                                transform="skewX(-18)" />
+                                        </g>
+                                    </g>
+                                </g>
+                                <rect class="w2" x="138" y="128" width="128" height="100" rx="2" />
+                                <rect class="dr w3" x="142" y="132" width="58" height="92" />
+                                <rect class="dr w3" x="204" y="132" width="58" height="92" />
+                                <rect class="hd" x="192" y="170" width="2" height="24" />
+                                <rect class="hd" x="208" y="170" width="2" height="24" />
+                                <rect class="w2" x="278" y="26" width="84" height="100" />
+                                <rect class="w3" x="282" y="30" width="38" height="92" />
+                                <rect class="w3" x="322" y="30" width="38" height="92" />
+                                <rect class="nb" x="278" y="134" width="84" height="100" />
+                                <circle class="led" cx="320" cy="138" r="2.5" fill="#ffd9a8" />
+                                <circle class="dc" cx="304" cy="206" r="14" />
+                                <rect class="dc" x="330" y="184" width="18" height="40" rx="2" />
+                            </svg></div>
+                    </div>
+                    <div class="v-tv-slide" data-name="Compact & Bedroom Units"
+                        data-short="Slim, space-smart units for apartments and bedrooms." data-href="#compact">
+                        <div class="v-tv-scene sc" data-f="ivory"><svg viewBox="0 0 400 300" role="img"
+                                aria-label="Compact & Bedroom Units illustration" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="s24" x1="0" y1="0" x2="1" y2="1">
+                                        <stop offset="0" stop-color="#ff9d3d" />
+                                        <stop offset=".55" stop-color="#7a3b00" />
+                                        <stop offset="1" stop-color="#1b1210" />
+                                    </linearGradient>
+                                    <linearGradient id="w24" x1="0" x2="1">
+                                        <stop offset="0" stop-color="#fff" stop-opacity="0" />
+                                        <stop offset=".5" stop-color="#fff" stop-opacity=".22" />
+                                        <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                                    </linearGradient>
+                                </defs>
+                                <rect class="wl" width="400" height="300" />
+                                <rect class="fl" y="252" width="400" height="48" />
+                                <rect class="sk" y="250" width="400" height="3" />
+                                <g>
+                                    <rect x="142" y="79" width="116" height="68" rx="2" fill="#0a0c0b" />
+                                    <clipPath id="t24">
+                                        <rect x="145" y="82" width="110" height="62" />
+                                    </clipPath>
+                                    <rect x="145" y="82" width="110" height="62" fill="url(#s24)" />
+                                    <g clip-path="url(#t24)">
+                                        <g class="sheen">
+                                            <rect x="35" y="82" width="50" height="62" fill="#fff" opacity=".16"
+                                                transform="skewX(-18)" />
+                                        </g>
+                                    </g>
+                                </g>
+                                <rect class="w1" x="108" y="166" width="184" height="30" rx="2" />
+                                <rect class="nb" x="112" y="170" width="100" height="22" />
+                                <rect class="dc" x="124" y="176" width="18" height="16" />
+                                <rect class="dc" x="148" y="180" width="28" height="12" />
+                                <rect class="dr w2" x="216" y="170" width="72" height="22" />
+                                <rect class="hd" x="244" y="180" width="16" height="2" />
+                                <rect class="halo" x="112" y="199" width="176" height="4" rx="2" fill="#FE8801" />
+                                <rect class="led" x="112" y="199" width="176" height="2" rx="1" fill="#ffd9a8" />
+                                <rect class="w2" x="317" y="196" width="6" height="56" />
+                                <path class="lamp" d="M304 196h32l-7-24h-18z" />
+                                <ellipse class="halo" cx="320" cy="198" rx="22" ry="6" fill="#FE8801" />
+                                <rect class="w2" x="52" y="226" width="18" height="26" />
+                                <path class="lf" d="M61 226 q-16 -28 -4 -52 q18 22 4 52z" />
+                                <path class="lf" d="M61 226 q14 -22 10 -42 q-16 16 -10 42z" />
+                            </svg></div>
+                    </div>
+                </div>
+            </div>
+            <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+                <div class="v-tv-cap" id="tv-cap">
+                    <div>
+                        <p class="v-tv-capn" id="cap-n"></p>
+                        <p class="v-tv-caps" id="cap-s"></p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <a id="cap-a" href="#floating" class="v-button v-button-outline mr-2">Explore this type <span
+                                aria-hidden="true">↓</span></a>
+                        <button type="button" class="v-tv-arrow" id="tv-prev" aria-label="Previous type">←</button>
+                        <button type="button" class="v-tv-arrow" id="tv-next" aria-label="Next type">→</button>
+                    </div>
+                </div>
+                <div class="v-tv-dots" id="tv-dots"><button type="button" class="v-tv-dot"
+                        aria-label="Show Floating TV Console"><i></i></button><button type="button" class="v-tv-dot"
+                        aria-label="Show Full-height Media Wall"><i></i></button><button type="button" class="v-tv-dot"
+                        aria-label="Show Fluted Panel Wall"><i></i></button><button type="button" class="v-tv-dot"
+                        aria-label="Show Niche & Display Wall"><i></i></button><button type="button" class="v-tv-dot"
+                        aria-label="Show Compact & Bedroom Units"><i></i></button></div>
+            </div>
+        </section>
+
+        <div class="v-tv-mq" aria-hidden="true">
+            <div><span>Concealed wiring</span><span>LED lighting</span><span>Made to measure</span><span>In-house
+                    factory</span><span>Soft-close drawers</span><span>Installed by our team</span><span>Concealed
+                    wiring</span><span>LED lighting</span><span>Made to measure</span><span>In-house
+                    factory</span><span>Soft-close drawers</span><span>Installed by our team</span></div>
+        </div>
+
+
+        <section id="story" class="v-tv-story" aria-label="How a media wall is planned">
+            <div class="v-tv-pin">
+                <div class="v-tv-frame" aria-hidden="true">
+                    <video autoplay muted loop playsinline preload="metadata"
+                        poster="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=85">
+                        <source src="/assets/10605591-uhd_3840_2160_30fps.mp4" type="video/mp4">
+                    </video>
+                    <div class="v-tv-frameshade"></div>
+                </div>
+                <div class="v-tv-copy">
+                    <p class="v-eyebrow !text-[#FE8801]">Behind the wall</p>
+                    <h2 id="story-h" class="font-serif text-4xl sm:text-6xl lg:text-7xl leading-[1] mt-4 text-white">
+                        Every wire planned. Every inch measured.</h2>
+                    <ol class="v-tv-ss mt-8" id="story-steps">
+                        <li class="is-on"><b>01</b><span>We measure your wall, TV and devices</span></li>
+                        <li><b>02</b><span>Cables are routed inside the unit before it is made</span></li>
+                        <li><b>03</b><span>Lighting and finish are tuned to your room</span></li>
+                    </ol>
+                </div>
+                <div class="v-tv-led" aria-hidden="true"><i id="story-led"></i></div>
+            </div>
+        </section>
+
+        <div class="v-tv-tabs" id="tv-tabs">
+            <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+                <nav aria-label="TV unit types"><a href="#floating" class="v-tv-tab">Floating TV Console</a><a
+                        href="#full-height" class="v-tv-tab">Full-height Media Wall</a><a href="#fluted"
+                        class="v-tv-tab">Fluted Panel Wall</a><a href="#niche" class="v-tv-tab">Niche & Display
+                        Wall</a><a href="#compact" class="v-tv-tab">Compact & Bedroom Units</a><span class="v-tv-bar"
+                        id="tv-bar" aria-hidden="true"></span></nav>
+            </div>
+        </div>
+
+        <section id="floating" class="v-tv-sec bg-alabaster py-20 lg:py-28 scroll-mt-32">
+            <div
+                class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
+                <div class="lg:w-[55%] w-full" data-r="l">
+                    <div class="v-tv-vis">
+                        <div class="v-tv-scene sc" data-f="walnut"><svg viewBox="0 0 400 300" role="img"
+                                aria-label="Floating TV Console illustration" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="s0" x1="0" y1="0" x2="1" y2="1">
+                                        <stop offset="0" stop-color="#ff9d3d" />
+                                        <stop offset=".55" stop-color="#7a3b00" />
+                                        <stop offset="1" stop-color="#1b1210" />
+                                    </linearGradient>
+                                    <linearGradient id="w0" x1="0" x2="1">
+                                        <stop offset="0" stop-color="#fff" stop-opacity="0" />
+                                        <stop offset=".5" stop-color="#fff" stop-opacity=".22" />
+                                        <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                                    </linearGradient>
+                                </defs>
+                                <rect class="wl" width="400" height="300" />
+                                <rect class="fl" y="252" width="400" height="48" />
+                                <rect class="sk" y="250" width="400" height="3" />
+                                <g>
+                                    <rect x="122" y="53" width="156" height="94" rx="2" fill="#0a0c0b" />
+                                    <clipPath id="t0">
+                                        <rect x="125" y="56" width="150" height="88" />
+                                    </clipPath>
+                                    <rect x="125" y="56" width="150" height="88" fill="url(#s0)" />
+                                    <g clip-path="url(#t0)">
+                                        <g class="sheen">
+                                            <rect x="-25" y="56" width="68" height="88" fill="#fff" opacity=".16"
+                                                transform="skewX(-18)" />
+                                        </g>
+                                    </g>
+                                </g>
+                                <rect class="w1" x="70" y="168" width="260" height="28" rx="2" />
+                                <rect class="dr w2" x="74" y="171" width="82" height="22" />
+                                <rect class="dr w2" x="159" y="171" width="82" height="22" />
+                                <rect class="dr w2" x="244" y="171" width="82" height="22" />
+                                <rect class="hd" x="106" y="180" width="20" height="2" />
+                                <rect class="hd" x="191" y="180" width="20" height="2" />
+                                <rect class="hd" x="276" y="180" width="20" height="2" />
+                                <rect class="halo" x="74" y="199" width="252" height="4" rx="2" fill="#FE8801" />
+                                <rect class="led" x="74" y="199" width="252" height="2" rx="1" fill="#ffd9a8" />
+                                <rect class="w2" x="92" y="152" width="18" height="16" rx="2" />
+                                <rect class="w2" x="338" y="226" width="18" height="26" />
+                                <path class="lf" d="M347 226 q-16 -28 -4 -52 q18 22 4 52z" />
+                                <path class="lf" d="M347 226 q14 -22 10 -42 q-16 16 -10 42z" />
+                            </svg><img class="v-tv-photo" src="/assets/images/tv/floating.jpg"
+                                alt="Floating TV Console by Vizous Interio" loading="lazy"
+                                onload="this.parentNode.classList.add('has-photo')" onerror="this.remove()"><button
+                                type="button" class="v-tv-pt is-on" style="left:50%;top:35%" data-k="0"
+                                aria-label="Hidden cabling"><b>1</b><em>Hidden cabling</em></button><button
+                                type="button" class="v-tv-pt" style="left:50%;top:60%" data-k="1"
+                                aria-label="Soft-close drawers"><b>2</b><em>Soft-close drawers</em></button><button
+                                type="button" class="v-tv-pt" style="left:50%;top:67%" data-k="2"
+                                aria-label="Underglow LED"><b>3</b><em>Underglow LED</em></button></div>
+                    </div>
+                </div>
+                <div class="lg:w-[45%] w-full" data-r="r">
+                    <p class="v-eyebrow">Type 01 of 05</p>
+                    <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[.98] mt-3">Floating TV Console</h2>
+                    <p class="text-sm leading-relaxed text-stone-600 mt-5 max-w-lg">A slim wall-hung console that keeps
+                        the floor clear and makes the room feel larger. Easy to clean and a good fit when you want clean
+                        lines.</p>
+                    <ol class="v-tv-pl mt-7">
+                        <li data-k="0" tabindex="0" class=is-on><b>1</b>
+                            <div><strong>Hidden cabling</strong>
+                                <p>Power and HDMI run behind the panel, so no wires show.</p>
+                            </div>
+                        </li>
+                        <li data-k="1" tabindex="0"><b>2</b>
+                            <div><strong>Soft-close drawers</strong>
+                                <p>Space for remotes, consoles and set-top boxes.</p>
+                            </div>
+                        </li>
+                        <li data-k="2" tabindex="0"><b>3</b>
+                            <div><strong>Underglow LED</strong>
+                                <p>A soft glow that makes the unit appear to float.</p>
+                            </div>
+                        </li>
+                    </ol>
+                    <p class="mt-5 text-xs text-stone-500"><span class="text-[#B85F00] font-medium">Best for:</span>
+                        Compact and mid-size living rooms &nbsp;·&nbsp; <span
+                            class="text-[#B85F00] font-medium">Finishes:</span> Laminate, veneer or painted</p>
+                    <div class="mt-7 flex flex-wrap gap-3">
+                        <button type="button" data-open-consult data-service="TV Unit - Floating TV Console"
+                            class="v-magnetic v-button bg-[#FE8801] text-black hover:bg-[#E07700]">Enquire about this
+                            unit <span aria-hidden="true">↗</span></button>
+                        <a href="#compare" class="v-button border border-charcoal/25 hover:bg-white">Compare types</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="full-height" class="v-tv-sec bg-sand/60 py-20 lg:py-28 scroll-mt-32">
+            <div
+                class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 flex flex-col lg:flex-row-reverse lg:flex-row gap-10 lg:gap-16 items-center">
+                <div class="lg:w-[55%] w-full" data-r="r">
+                    <div class="v-tv-vis">
+                        <div class="v-tv-scene sc" data-f="oak"><svg viewBox="0 0 400 300" role="img"
+                                aria-label="Full-height Media Wall illustration" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="s1" x1="0" y1="0" x2="1" y2="1">
+                                        <stop offset="0" stop-color="#ff9d3d" />
+                                        <stop offset=".55" stop-color="#7a3b00" />
+                                        <stop offset="1" stop-color="#1b1210" />
+                                    </linearGradient>
+                                    <linearGradient id="w1" x1="0" x2="1">
+                                        <stop offset="0" stop-color="#fff" stop-opacity="0" />
+                                        <stop offset=".5" stop-color="#fff" stop-opacity=".22" />
+                                        <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                                    </linearGradient>
+                                </defs>
+                                <rect class="wl" width="400" height="300" />
+                                <rect class="fl" y="252" width="400" height="48" />
+                                <rect class="sk" y="250" width="400" height="3" />
+                                <rect class="w1" x="30" y="14" width="340" height="238" />
+                                <rect class="w2" x="112" y="20" width="176" height="226" />
+                                <rect class="w3" x="36" y="20" width="33" height="226" />
+                                <rect class="w3" x="71" y="20" width="33" height="226" />
+                                <rect class="hd" x="64" y="126" width="2" height="22" />
+                                <rect class="hd" x="74" y="126" width="2" height="22" />
+                                <rect class="nb" x="294" y="20" width="70" height="226" />
+                                <rect class="w2" x="294" y="84" width="70" height="4" />
+                                <rect class="w2" x="294" y="148" width="70" height="4" />
+                                <rect class="w2" x="294" y="212" width="70" height="4" />
+                                <circle class="dc" cx="312" cy="70" r="9" />
+                                <rect class="dc" x="334" y="62" width="16" height="22" rx="2" />
+                                <rect class="dc" x="304" y="126" width="22" height="18" rx="2" />
+                                <circle class="dc" cx="344" cy="134" r="8" />
+                                <rect class="dc" x="318" y="190" width="30" height="18" rx="2" />
+                                <g>
+                                    <rect x="125" y="41" width="150" height="90" rx="2" fill="#0a0c0b" />
+                                    <clipPath id="t1">
+                                        <rect x="128" y="44" width="144" height="84" />
+                                    </clipPath>
+                                    <rect x="128" y="44" width="144" height="84" fill="url(#s1)" />
+                                    <g clip-path="url(#t1)">
+                                        <g class="sheen">
+                                            <rect x="-16" y="44" width="65" height="84" fill="#fff" opacity=".16"
+                                                transform="skewX(-18)" />
+                                        </g>
+                                    </g>
+                                </g>
+                                <rect class="w1" x="118" y="176" width="164" height="48" rx="2" />
+                                <rect class="dr w3" x="122" y="180" width="156" height="18" />
+                                <rect class="dr w3" x="122" y="202" width="156" height="18" />
+                                <rect class="halo" x="107" y="20" width="3" height="228" rx="2" fill="#FE8801" />
+                                <rect class="led" x="107" y="20" width="3" height="226" rx="1" fill="#ffd9a8" />
+                                <rect class="halo" x="289" y="20" width="3" height="228" rx="2" fill="#FE8801" />
+                                <rect class="led" x="289" y="20" width="3" height="226" rx="1" fill="#ffd9a8" />
+                            </svg><img class="v-tv-photo" src="/assets/images/tv/full-height.jpg"
+                                alt="Full-height Media Wall by Vizous Interio" loading="lazy"
+                                onload="this.parentNode.classList.add('has-photo')" onerror="this.remove()"><button
+                                type="button" class="v-tv-pt is-on" style="left:18%;top:50%" data-k="0"
+                                aria-label="Tall closed storage"><b>1</b><em>Tall closed storage</em></button><button
+                                type="button" class="v-tv-pt" style="left:83%;top:30%" data-k="1"
+                                aria-label="Backlit open shelves"><b>2</b><em>Backlit open shelves</em></button><button
+                                type="button" class="v-tv-pt" style="left:50%;top:36%" data-k="2"
+                                aria-label="Concealed wiring"><b>3</b><em>Concealed wiring</em></button></div>
+                    </div>
+                </div>
+                <div class="lg:w-[45%] w-full" data-r="l">
+                    <p class="v-eyebrow">Type 02 of 05</p>
+                    <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[.98] mt-3">Full-height Media Wall
+                    </h2>
+                    <p class="text-sm leading-relaxed text-stone-600 mt-5 max-w-lg">A floor-to-ceiling composition that
+                        holds the TV, storage and display together. The statement piece for a main living room.</p>
+                    <ol class="v-tv-pl mt-7">
+                        <li data-k="0" tabindex="0" class=is-on><b>1</b>
+                            <div><strong>Tall closed storage</strong>
+                                <p>Hide blankets, games and everyday clutter behind doors.</p>
+                            </div>
+                        </li>
+                        <li data-k="1" tabindex="0"><b>2</b>
+                            <div><strong>Backlit open shelves</strong>
+                                <p>Display your décor with profile lighting.</p>
+                            </div>
+                        </li>
+                        <li data-k="2" tabindex="0"><b>3</b>
+                            <div><strong>Concealed wiring</strong>
+                                <p>The TV, soundbar and box are wired inside the wall.</p>
+                            </div>
+                        </li>
+                    </ol>
+                    <p class="mt-5 text-xs text-stone-500"><span class="text-[#B85F00] font-medium">Best for:</span>
+                        Large living rooms and open plans &nbsp;·&nbsp; <span
+                            class="text-[#B85F00] font-medium">Finishes:</span> Veneer, laminate and glass accents</p>
+                    <div class="mt-7 flex flex-wrap gap-3">
+                        <button type="button" data-open-consult data-service="TV Unit - Full-height Media Wall"
+                            class="v-magnetic v-button bg-[#FE8801] text-black hover:bg-[#E07700]">Enquire about this
+                            unit <span aria-hidden="true">↗</span></button>
+                        <a href="#compare" class="v-button border border-charcoal/25 hover:bg-white">Compare types</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="fluted" class="v-tv-sec bg-alabaster py-20 lg:py-28 scroll-mt-32">
+            <div
+                class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
+                <div class="lg:w-[55%] w-full" data-r="l">
+                    <div class="v-tv-vis">
+                        <div class="v-tv-scene sc" data-f="charcoal"><svg viewBox="0 0 400 300" role="img"
+                                aria-label="Fluted Panel Wall illustration" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="s2" x1="0" y1="0" x2="1" y2="1">
+                                        <stop offset="0" stop-color="#ff9d3d" />
+                                        <stop offset=".55" stop-color="#7a3b00" />
+                                        <stop offset="1" stop-color="#1b1210" />
+                                    </linearGradient>
+                                    <linearGradient id="w2" x1="0" x2="1">
+                                        <stop offset="0" stop-color="#fff" stop-opacity="0" />
+                                        <stop offset=".5" stop-color="#fff" stop-opacity=".22" />
+                                        <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                                    </linearGradient>
+                                </defs>
+                                <rect class="wl" width="400" height="300" />
+                                <rect class="fl" y="252" width="400" height="48" />
+                                <rect class="sk" y="250" width="400" height="3" />
+                                <rect class="w1" x="50" y="16" width="300" height="224" />
+                                <rect class="gv" x="54" y="16" width="3" height="224" />
+                                <rect class="gv" x="62" y="16" width="3" height="224" />
+                                <rect class="gv" x="70" y="16" width="3" height="224" />
+                                <rect class="gv" x="78" y="16" width="3" height="224" />
+                                <rect class="gv" x="86" y="16" width="3" height="224" />
+                                <rect class="gv" x="94" y="16" width="3" height="224" />
+                                <rect class="gv" x="102" y="16" width="3" height="224" />
+                                <rect class="gv" x="110" y="16" width="3" height="224" />
+                                <rect class="gv" x="118" y="16" width="3" height="224" />
+                                <rect class="gv" x="126" y="16" width="3" height="224" />
+                                <rect class="gv" x="134" y="16" width="3" height="224" />
+                                <rect class="gv" x="142" y="16" width="3" height="224" />
+                                <rect class="gv" x="150" y="16" width="3" height="224" />
+                                <rect class="gv" x="158" y="16" width="3" height="224" />
+                                <rect class="gv" x="166" y="16" width="3" height="224" />
+                                <rect class="gv" x="174" y="16" width="3" height="224" />
+                                <rect class="gv" x="182" y="16" width="3" height="224" />
+                                <rect class="gv" x="190" y="16" width="3" height="224" />
+                                <rect class="gv" x="198" y="16" width="3" height="224" />
+                                <rect class="gv" x="206" y="16" width="3" height="224" />
+                                <rect class="gv" x="214" y="16" width="3" height="224" />
+                                <rect class="gv" x="222" y="16" width="3" height="224" />
+                                <rect class="gv" x="230" y="16" width="3" height="224" />
+                                <rect class="gv" x="238" y="16" width="3" height="224" />
+                                <rect class="gv" x="246" y="16" width="3" height="224" />
+                                <rect class="gv" x="254" y="16" width="3" height="224" />
+                                <rect class="gv" x="262" y="16" width="3" height="224" />
+                                <rect class="gv" x="270" y="16" width="3" height="224" />
+                                <rect class="gv" x="278" y="16" width="3" height="224" />
+                                <rect class="gv" x="286" y="16" width="3" height="224" />
+                                <rect class="gv" x="294" y="16" width="3" height="224" />
+                                <rect class="gv" x="302" y="16" width="3" height="224" />
+                                <rect class="gv" x="310" y="16" width="3" height="224" />
+                                <rect class="gv" x="318" y="16" width="3" height="224" />
+                                <rect class="gv" x="326" y="16" width="3" height="224" />
+                                <rect class="gv" x="334" y="16" width="3" height="224" />
+                                <rect class="gv" x="342" y="16" width="3" height="224" />
+                                <clipPath id="p2">
+                                    <rect x="50" y="16" width="300" height="224" />
+                                </clipPath>
+                                <g clip-path="url(#p2)">
+                                    <g class="sweep">
+                                        <rect x="20" y="16" width="70" height="224" fill="url(#w2)" />
+                                    </g>
+                                </g>
+                                <g>
+                                    <rect x="127" y="47" width="146" height="88" rx="2" fill="#0a0c0b" />
+                                    <clipPath id="t2">
+                                        <rect x="130" y="50" width="140" height="82" />
+                                    </clipPath>
+                                    <rect x="130" y="50" width="140" height="82" fill="url(#s2)" />
+                                    <g clip-path="url(#t2)">
+                                        <g class="sheen">
+                                            <rect x="-10" y="50" width="63" height="82" fill="#fff" opacity=".16"
+                                                transform="skewX(-18)" />
+                                        </g>
+                                    </g>
+                                </g>
+                                <rect class="w2" x="100" y="166" width="200" height="24" rx="2" />
+                                <rect class="dr w3" x="104" y="169" width="94" height="18" />
+                                <rect class="dr w3" x="202" y="169" width="94" height="18" />
+                                <rect class="halo" x="104" y="193" width="192" height="4" rx="2" fill="#FE8801" />
+                                <rect class="led" x="104" y="193" width="192" height="2" rx="1" fill="#ffd9a8" />
+                                <rect class="w2" x="318" y="226" width="18" height="26" />
+                                <path class="lf" d="M327 226 q-16 -28 -4 -52 q18 22 4 52z" />
+                                <path class="lf" d="M327 226 q14 -22 10 -42 q-16 16 -10 42z" />
+                            </svg><img class="v-tv-photo" src="/assets/images/tv/fluted.jpg"
+                                alt="Fluted Panel Wall by Vizous Interio" loading="lazy"
+                                onload="this.parentNode.classList.add('has-photo')" onerror="this.remove()"><button
+                                type="button" class="v-tv-pt is-on" style="left:23%;top:40%" data-k="0"
+                                aria-label="Fluted panel"><b>1</b><em>Fluted panel</em></button><button type="button"
+                                class="v-tv-pt" style="left:50%;top:31%" data-k="1"
+                                aria-label="Slim TV bracket"><b>2</b><em>Slim TV bracket</em></button><button
+                                type="button" class="v-tv-pt" style="left:50%;top:64%" data-k="2"
+                                aria-label="Grazing LED"><b>3</b><em>Grazing LED</em></button></div>
+                    </div>
+                </div>
+                <div class="lg:w-[45%] w-full" data-r="r">
+                    <p class="v-eyebrow">Type 03 of 05</p>
+                    <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[.98] mt-3">Fluted Panel Wall</h2>
+                    <p class="text-sm leading-relaxed text-stone-600 mt-5 max-w-lg">Vertical grooves add depth and
+                        shadow behind the screen. A textured backdrop that works with a floating console or a full wall.
+                    </p>
+                    <ol class="v-tv-pl mt-7">
+                        <li data-k="0" tabindex="0" class=is-on><b>1</b>
+                            <div><strong>Fluted panel</strong>
+                                <p>Precision-cut grooves give the wall depth and texture.</p>
+                            </div>
+                        </li>
+                        <li data-k="1" tabindex="0"><b>2</b>
+                            <div><strong>Slim TV bracket</strong>
+                                <p>The screen sits close to the wall with cables hidden.</p>
+                            </div>
+                        </li>
+                        <li data-k="2" tabindex="0"><b>3</b>
+                            <div><strong>Grazing LED</strong>
+                                <p>Light that brings out the fluting in the evening.</p>
+                            </div>
+                        </li>
+                    </ol>
+                    <p class="mt-5 text-xs text-stone-500"><span class="text-[#B85F00] font-medium">Best for:</span>
+                        Feature walls and modern homes &nbsp;·&nbsp; <span
+                            class="text-[#B85F00] font-medium">Finishes:</span> Veneer, laminate or painted</p>
+                    <div class="mt-7 flex flex-wrap gap-3">
+                        <button type="button" data-open-consult data-service="TV Unit - Fluted Panel Wall"
+                            class="v-magnetic v-button bg-[#FE8801] text-black hover:bg-[#E07700]">Enquire about this
+                            unit <span aria-hidden="true">↗</span></button>
+                        <a href="#compare" class="v-button border border-charcoal/25 hover:bg-white">Compare types</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="niche" class="v-tv-sec bg-sand/60 py-20 lg:py-28 scroll-mt-32">
+            <div
+                class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 flex flex-col lg:flex-row-reverse lg:flex-row gap-10 lg:gap-16 items-center">
+                <div class="lg:w-[55%] w-full" data-r="r">
+                    <div class="v-tv-vis">
+                        <div class="v-tv-scene sc" data-f="teak"><svg viewBox="0 0 400 300" role="img"
+                                aria-label="Niche & Display Wall illustration" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="s3" x1="0" y1="0" x2="1" y2="1">
+                                        <stop offset="0" stop-color="#ff9d3d" />
+                                        <stop offset=".55" stop-color="#7a3b00" />
+                                        <stop offset="1" stop-color="#1b1210" />
+                                    </linearGradient>
+                                    <linearGradient id="w3" x1="0" x2="1">
+                                        <stop offset="0" stop-color="#fff" stop-opacity="0" />
+                                        <stop offset=".5" stop-color="#fff" stop-opacity=".22" />
+                                        <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                                    </linearGradient>
+                                </defs>
+                                <rect class="wl" width="400" height="300" />
+                                <rect class="fl" y="252" width="400" height="48" />
+                                <rect class="sk" y="250" width="400" height="3" />
+                                <rect class="w1" x="30" y="16" width="340" height="236" />
+                                <rect class="nb" x="42" y="26" width="84" height="64" />
+                                <circle class="led" cx="84" cy="30" r="2.5" fill="#ffd9a8" />
+                                <circle class="dc" cx="84" cy="72" r="14" />
+                                <rect class="nb" x="42" y="98" width="84" height="64" />
+                                <circle class="led" cx="84" cy="102" r="2.5" fill="#ffd9a8" />
+                                <rect class="dc" x="66" y="128" width="16" height="30" rx="2" />
+                                <rect class="dc" x="88" y="138" width="22" height="20" rx="2" />
+                                <rect class="nb" x="42" y="170" width="84" height="64" />
+                                <circle class="led" cx="84" cy="174" r="2.5" fill="#ffd9a8" />
+                                <rect class="dc" x="60" y="214" width="60" height="16" rx="2" />
+                                <g>
+                                    <rect x="143" y="37" width="118" height="72" rx="2" fill="#0a0c0b" />
+                                    <clipPath id="t3">
+                                        <rect x="146" y="40" width="112" height="66" />
+                                    </clipPath>
+                                    <rect x="146" y="40" width="112" height="66" fill="url(#s3)" />
+                                    <g clip-path="url(#t3)">
+                                        <g class="sheen">
+                                            <rect x="34" y="40" width="50" height="66" fill="#fff" opacity=".16"
+                                                transform="skewX(-18)" />
+                                        </g>
+                                    </g>
+                                </g>
+                                <rect class="w2" x="138" y="128" width="128" height="100" rx="2" />
+                                <rect class="dr w3" x="142" y="132" width="58" height="92" />
+                                <rect class="dr w3" x="204" y="132" width="58" height="92" />
+                                <rect class="hd" x="192" y="170" width="2" height="24" />
+                                <rect class="hd" x="208" y="170" width="2" height="24" />
+                                <rect class="w2" x="278" y="26" width="84" height="100" />
+                                <rect class="w3" x="282" y="30" width="38" height="92" />
+                                <rect class="w3" x="322" y="30" width="38" height="92" />
+                                <rect class="nb" x="278" y="134" width="84" height="100" />
+                                <circle class="led" cx="320" cy="138" r="2.5" fill="#ffd9a8" />
+                                <circle class="dc" cx="304" cy="206" r="14" />
+                                <rect class="dc" x="330" y="184" width="18" height="40" rx="2" />
+                            </svg><img class="v-tv-photo" src="/assets/images/tv/niche.jpg"
+                                alt="Niche & Display Wall by Vizous Interio" loading="lazy"
+                                onload="this.parentNode.classList.add('has-photo')" onerror="this.remove()"><button
+                                type="button" class="v-tv-pt is-on" style="left:21%;top:30%" data-k="0"
+                                aria-label="Spot-lit niches"><b>1</b><em>Spot-lit niches</em></button><button
+                                type="button" class="v-tv-pt" style="left:80%;top:40%" data-k="1"
+                                aria-label="Closed storage"><b>2</b><em>Closed storage</em></button><button
+                                type="button" class="v-tv-pt" style="left:51%;top:35%" data-k="2"
+                                aria-label="Centred TV"><b>3</b><em>Centred TV</em></button></div>
+                    </div>
+                </div>
+                <div class="lg:w-[45%] w-full" data-r="l">
+                    <p class="v-eyebrow">Type 04 of 05</p>
+                    <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[.98] mt-3">Niche & Display Wall</h2>
+                    <p class="text-sm leading-relaxed text-stone-600 mt-5 max-w-lg">Open niches for décor and closed
+                        cabinets for everything else. A good fit if the TV unit also has to hold books, art and
+                        collectibles.</p>
+                    <ol class="v-tv-pl mt-7">
+                        <li data-k="0" tabindex="0" class=is-on><b>1</b>
+                            <div><strong>Spot-lit niches</strong>
+                                <p>Small lights make décor and art stand out.</p>
+                            </div>
+                        </li>
+                        <li data-k="1" tabindex="0"><b>2</b>
+                            <div><strong>Closed storage</strong>
+                                <p>Doors keep everyday items out of sight.</p>
+                            </div>
+                        </li>
+                        <li data-k="2" tabindex="0"><b>3</b>
+                            <div><strong>Centred TV</strong>
+                                <p>Framed by storage on both sides for balance.</p>
+                            </div>
+                        </li>
+                    </ol>
+                    <p class="mt-5 text-xs text-stone-500"><span class="text-[#B85F00] font-medium">Best for:</span>
+                        Families and collectors &nbsp;·&nbsp; <span class="text-[#B85F00] font-medium">Finishes:</span>
+                        Veneer, laminate and mirror</p>
+                    <div class="mt-7 flex flex-wrap gap-3">
+                        <button type="button" data-open-consult data-service="TV Unit - Niche & Display Wall"
+                            class="v-magnetic v-button bg-[#FE8801] text-black hover:bg-[#E07700]">Enquire about this
+                            unit <span aria-hidden="true">↗</span></button>
+                        <a href="#compare" class="v-button border border-charcoal/25 hover:bg-white">Compare types</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="compact" class="v-tv-sec bg-alabaster py-20 lg:py-28 scroll-mt-32">
+            <div
+                class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
+                <div class="lg:w-[55%] w-full" data-r="l">
+                    <div class="v-tv-vis">
+                        <div class="v-tv-scene sc" data-f="ivory"><svg viewBox="0 0 400 300" role="img"
+                                aria-label="Compact & Bedroom Units illustration" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="s4" x1="0" y1="0" x2="1" y2="1">
+                                        <stop offset="0" stop-color="#ff9d3d" />
+                                        <stop offset=".55" stop-color="#7a3b00" />
+                                        <stop offset="1" stop-color="#1b1210" />
+                                    </linearGradient>
+                                    <linearGradient id="w4" x1="0" x2="1">
+                                        <stop offset="0" stop-color="#fff" stop-opacity="0" />
+                                        <stop offset=".5" stop-color="#fff" stop-opacity=".22" />
+                                        <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                                    </linearGradient>
+                                </defs>
+                                <rect class="wl" width="400" height="300" />
+                                <rect class="fl" y="252" width="400" height="48" />
+                                <rect class="sk" y="250" width="400" height="3" />
+                                <g>
+                                    <rect x="142" y="79" width="116" height="68" rx="2" fill="#0a0c0b" />
+                                    <clipPath id="t4">
+                                        <rect x="145" y="82" width="110" height="62" />
+                                    </clipPath>
+                                    <rect x="145" y="82" width="110" height="62" fill="url(#s4)" />
+                                    <g clip-path="url(#t4)">
+                                        <g class="sheen">
+                                            <rect x="35" y="82" width="50" height="62" fill="#fff" opacity=".16"
+                                                transform="skewX(-18)" />
+                                        </g>
+                                    </g>
+                                </g>
+                                <rect class="w1" x="108" y="166" width="184" height="30" rx="2" />
+                                <rect class="nb" x="112" y="170" width="100" height="22" />
+                                <rect class="dc" x="124" y="176" width="18" height="16" />
+                                <rect class="dc" x="148" y="180" width="28" height="12" />
+                                <rect class="dr w2" x="216" y="170" width="72" height="22" />
+                                <rect class="hd" x="244" y="180" width="16" height="2" />
+                                <rect class="halo" x="112" y="199" width="176" height="4" rx="2" fill="#FE8801" />
+                                <rect class="led" x="112" y="199" width="176" height="2" rx="1" fill="#ffd9a8" />
+                                <rect class="w2" x="317" y="196" width="6" height="56" />
+                                <path class="lamp" d="M304 196h32l-7-24h-18z" />
+                                <ellipse class="halo" cx="320" cy="198" rx="22" ry="6" fill="#FE8801" />
+                                <rect class="w2" x="52" y="226" width="18" height="26" />
+                                <path class="lf" d="M61 226 q-16 -28 -4 -52 q18 22 4 52z" />
+                                <path class="lf" d="M61 226 q14 -22 10 -42 q-16 16 -10 42z" />
+                            </svg><img class="v-tv-photo" src="/assets/images/tv/compact.jpg"
+                                alt="Compact & Bedroom Units by Vizous Interio" loading="lazy"
+                                onload="this.parentNode.classList.add('has-photo')" onerror="this.remove()"><button
+                                type="button" class="v-tv-pt is-on" style="left:50%;top:43%" data-k="0"
+                                aria-label="Slim wall mount"><b>1</b><em>Slim wall mount</em></button><button
+                                type="button" class="v-tv-pt" style="left:65%;top:62%" data-k="1"
+                                aria-label="Drawer and open shelf"><b>2</b><em>Drawer and open
+                                    shelf</em></button><button type="button" class="v-tv-pt" style="left:80%;top:72%"
+                                data-k="2" aria-label="Soft ambient light"><b>3</b><em>Soft ambient light</em></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-[45%] w-full" data-r="r">
+                    <p class="v-eyebrow">Type 05 of 05</p>
+                    <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[.98] mt-3">Compact & Bedroom Units
+                    </h2>
+                    <p class="text-sm leading-relaxed text-stone-600 mt-5 max-w-lg">Slim, space-smart units sized for
+                        apartments, guest rooms and bedrooms, with space for a set-top box and a few essentials.</p>
+                    <ol class="v-tv-pl mt-7">
+                        <li data-k="0" tabindex="0" class=is-on><b>1</b>
+                            <div><strong>Slim wall mount</strong>
+                                <p>Keeps the screen close to the wall to save space.</p>
+                            </div>
+                        </li>
+                        <li data-k="1" tabindex="0"><b>2</b>
+                            <div><strong>Drawer and open shelf</strong>
+                                <p>One drawer for remotes, one shelf for the set-top box.</p>
+                            </div>
+                        </li>
+                        <li data-k="2" tabindex="0"><b>3</b>
+                            <div><strong>Soft ambient light</strong>
+                                <p>Optional lamp and LED for a calm evening mood.</p>
+                            </div>
+                        </li>
+                    </ol>
+                    <p class="mt-5 text-xs text-stone-500"><span class="text-[#B85F00] font-medium">Best for:</span>
+                        Apartments and bedrooms &nbsp;·&nbsp; <span class="text-[#B85F00] font-medium">Finishes:</span>
+                        Light laminates and painted looks</p>
+                    <div class="mt-7 flex flex-wrap gap-3">
+                        <button type="button" data-open-consult data-service="TV Unit - Compact & Bedroom Units"
+                            class="v-magnetic v-button bg-[#FE8801] text-black hover:bg-[#E07700]">Enquire about this
+                            unit <span aria-hidden="true">↗</span></button>
+                        <a href="#compare" class="v-button border border-charcoal/25 hover:bg-white">Compare types</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 lg:py-28 bg-olive-900 text-white overflow-hidden">
+            <div
+                class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-center">
+                <div data-r="l">
+                    <p class="v-eyebrow">In real living rooms</p>
+                    <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[.98] mt-3">Designed to look good <em
+                            class="text-[#FE8801]">and work every day.</em></h2>
+                    <p class="text-sm text-white/70 mt-5 max-w-md leading-relaxed">Whichever type you choose, the aim is
+                        the same: a calm wall, hidden wiring and storage that fits how you live.</p>
+                    <button type="button" data-open-consult data-service="TV Units & Media Walls"
+                        class="v-magnetic v-button bg-[#FE8801] text-black mt-8">Plan my media wall
+                        <span>↗</span></button>
+                </div>
+                <div class="v-tv-pair" data-r="r">
+                    <figure class="v-tv-p1"><img data-par="-36"
+                            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1300&q=85"
+                            alt="Living room with a coordinated TV console and shelving" loading="lazy"></figure>
+                    <figure class="v-tv-p2"><img data-par="40"
+                            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85"
+                            alt="Warm modern living room with natural wood finishes" loading="lazy"></figure>
+                </div>
+            </div>
+        </section>
+        <section id="compare" class="py-20 lg:py-28 scroll-mt-32">
+            <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+                <div class="max-w-2xl mb-10" data-r="u">
+                    <p class="v-eyebrow">Not sure which one?</p>
+                    <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[.98] mt-3">Compare the types</h2>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="v-tv-table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Best for</th>
+                                <th>Key feature</th>
+                                <th>Finishes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-r="u" style="--d:0ms">
+                                <th scope="row"><a href="#floating">Floating TV Console</a></th>
+                                <td>Compact and mid-size living rooms</td>
+                                <td>Soft-close drawers</td>
+                                <td>Laminate, veneer or painted</td>
+                            </tr>
+                            <tr data-r="u" style="--d:70ms">
+                                <th scope="row"><a href="#full-height">Full-height Media Wall</a></th>
+                                <td>Large living rooms and open plans</td>
+                                <td>Backlit open shelves</td>
+                                <td>Veneer, laminate and glass accents</td>
+                            </tr>
+                            <tr data-r="u" style="--d:140ms">
+                                <th scope="row"><a href="#fluted">Fluted Panel Wall</a></th>
+                                <td>Feature walls and modern homes</td>
+                                <td>Slim TV bracket</td>
+                                <td>Veneer, laminate or painted</td>
+                            </tr>
+                            <tr data-r="u" style="--d:210ms">
+                                <th scope="row"><a href="#niche">Niche & Display Wall</a></th>
+                                <td>Families and collectors</td>
+                                <td>Closed storage</td>
+                                <td>Veneer, laminate and mirror</td>
+                            </tr>
+                            <tr data-r="u" style="--d:280ms">
+                                <th scope="row"><a href="#compact">Compact & Bedroom Units</a></th>
+                                <td>Apartments and bedrooms</td>
+                                <td>Drawer and open shelf</td>
+                                <td>Light laminates and painted looks</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 lg:py-20 bg-sand/60">
+            <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+                <div data-r="u">
+                    <p class="v-eyebrow">How it works</p>
+                    <h2 class="font-serif text-4xl sm:text-5xl mt-3 mb-10">From wall measure to switch-on</h2>
+                </div>
+                <div class="v-steps">
+                    <div class="v-step" data-r="u" style="--d:0ms"><span>01</span>
+                        <h3>Measure</h3>
+                        <p>We visit and note the wall, TV size and devices.</p>
+                    </div>
+                    <div class="v-step" data-r="u" style="--d:120ms"><span>02</span>
+                        <h3>Design</h3>
+                        <p>Review the layout, finish, lighting and quote.</p>
+                    </div>
+                    <div class="v-step" data-r="u" style="--d:240ms"><span>03</span>
+                        <h3>Make</h3>
+                        <p>Built in-house to the approved drawings.</p>
+                    </div>
+                    <div class="v-step" data-r="u" style="--d:360ms"><span>04</span>
+                        <h3>Install</h3>
+                        <p>We fit, wire, mount the TV and test the lights.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 lg:py-20 bg-olive-900 text-white">
+            <div class="max-w-5xl mx-auto px-5 sm:px-8 text-center" data-r="u">
+                <h2 class="font-serif text-4xl sm:text-6xl lg:text-7xl leading-[.98]">Give your TV<br><em>a wall to be
+                        proud of.</em></h2>
+                <p class="text-sm text-white/70 mt-5 max-w-lg mx-auto">Share your wall size and the type you like. We
+                    will suggest a layout and finish for your home.</p>
+                <button type="button" data-open-consult data-service="TV Units & Media Walls"
+                    class="v-magnetic v-button bg-white text-charcoal mt-8">Get a media wall consultation
+                    <span>↗</span></button>
+            </div>
+        </section>
+    </main>
+
+    <div id="vizous-faq-mount"></div>
+
+    <div id="vizous-related-mount"></div>
+
+    <div id="vizous-enquiry-mount"></div>
+
+    <!-- SECTION 8: VERIFIED VIZOUS FOOTER -->
+    <footer id="contact" class="bg-black text-stone-300 pt-16 pb-12 border-t-2 border-[#FE8801]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-neutral-800">
+                <div class="lg:col-span-4">
+                    <a href="/#home" class="inline-block mb-4" aria-label="Vizous Interio Home">
+                        <img src="/assets/images/logo2.png"
+                            alt="Vizous - Exploring Frontiers | Kitchen, Wardrobe, Furniture"
+                            class="h-16 sm:h-20 max-w-full w-auto object-contain block" />
+                    </a>
+                    <p class="text-xs text-stone-400 leading-relaxed max-w-sm mb-6">
+                        Bespoke residential and commercial interiors paired with precision in-house manufactured modular
+                        furniture
+                        in Bhubaneswar.
+                    </p>
+                    <div class="flex items-center gap-2.5">
+                        <a href="https://wa.me/919938117844" target="_blank" rel="noopener noreferrer"
+                            class="text-xs bg-white/10 hover:bg-[#FE8801] hover:text-black text-white px-3.5 py-2 rounded-full transition-colors">
+                            WhatsApp Us
+                        </a>
+                        <a href="tel:+919938117844"
+                            class="text-xs border border-white/15 hover:border-[#FE8801] hover:text-[#FE8801] text-stone-200 px-3.5 py-2 rounded-full transition-colors">
+                            +91-9938117844
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2">
+                    <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-[#FE8801] mb-4">Quick Links</h3>
+                    <ul class="space-y-2.5 text-xs text-stone-400">
+                        <li><a href="/#home" class="hover:text-[#FE8801] transition-colors">Home</a></li>
+                        <li><a href="/#about" class="hover:text-[#FE8801] transition-colors">About Us</a></li>
+                        <li><a href="/services/" class="hover:text-[#FE8801] transition-colors">Services</a></li>
+                        <li><a href="/#projects" class="hover:text-[#FE8801] transition-colors">Projects</a></li>
+                        <li><a href="/#blog" class="hover:text-[#FE8801] transition-colors">Blog</a></li>
+                        <li><a href="/#contact" class="hover:text-[#FE8801] transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-3">
+                    <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-[#FE8801] mb-4">Our Services</h3>
+                    <ul class="space-y-2.5 text-xs text-stone-400">
+                        <li><a href="/services/modular-kitchen/" class="hover:text-[#FE8801] transition-colors">Modular
+                                Kitchen
+                                Design</a></li>
+                        <li><a href="/services/wardrobe-design/" class="hover:text-[#FE8801] transition-colors">Wardrobe
+                                Design</a>
+                        </li>
+                        <li><a href="/services/office-furniture/" class="hover:text-[#FE8801] transition-colors">Office
+                                Furniture</a></li>
+                        <li><a href="/services/modular-furniture/" class="hover:text-[#FE8801] transition-colors">Custom
+                                Modular
+                                Furniture</a></li>
+                        <li><a href="/services/" class="hover:text-[#FE8801] transition-colors">All Interior
+                                Services</a></li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-3">
+                    <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-[#FE8801] mb-4">Corporate &amp;
+                        Factory</h3>
+                    <ul class="space-y-3 text-xs text-stone-400">
+                        <li class="flex items-start gap-2.5">
+                            <svg class="w-4 h-4 text-[#FE8801] shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                stroke-width="1.7" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span><strong class="text-stone-200">Corporate Office:</strong> 1st Floor, Laxmi Sagar
+                                Square, Plot
+                                301/1516, Cuttack Rd, Near Sunshine Hospital, Laxmisagar, Bhubaneswar 751006</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <svg class="w-4 h-4 text-[#FE8801] shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                stroke-width="1.7" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5" />
+                            </svg>
+                            <span><strong class="text-stone-200">Factory:</strong> Plot #12, Bhagabanpur Industrial
+                                Estate, Patrapada,
+                                Bhubaneswar 751019</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <svg class="w-4 h-4 text-[#FE8801] shrink-0" fill="none" stroke="currentColor"
+                                stroke-width="1.7" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <a href="mailto:info@vizous.in"
+                                class="hover:text-[#FE8801] transition-colors">info@vizous.in</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-stone-400">
+                <p>&copy; 2026 VIZOUS INTERIO PRIVATE LIMITED. All rights reserved.</p>
+                <p>Mon – Sun: 10:00 AM – 8:00 PM &bull; Bhubaneswar &amp; Raipur</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menu = document.getElementById('mobile-menu');
+            const openBtn = document.getElementById('mobile-menu-btn');
+            const openIcon = document.getElementById('mobile-menu-icon-open');
+            const closeIcon = document.getElementById('mobile-menu-icon-close');
+            if (menu && openBtn) {
+                openBtn.addEventListener('click', function () {
+                    const isHidden = menu.classList.toggle('hidden');
+                    openBtn.setAttribute('aria-expanded', String(!isHidden));
+                    if (openIcon) openIcon.classList.toggle('hidden', !isHidden);
+                    if (closeIcon) closeIcon.classList.toggle('hidden', isHidden);
+                });
+                menu.querySelectorAll('a').forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        menu.classList.add('hidden');
+                        if (openIcon) openIcon.classList.remove('hidden');
+                        if (closeIcon) closeIcon.classList.add('hidden');
+                        openBtn.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+            var $ = function (s, c) { return [].slice.call((c || document).querySelectorAll(s)) };
+
+            /* ---- Hero coverflow ---- */
+            var stage = document.getElementById('tv-stage'), track = document.getElementById('tv-track'), slides = $('.v-tv-slide'), dots = $('.v-tv-dot'), hero = document.getElementById('tv-hero'), cap = document.getElementById('tv-cap'), cur = 0, n = slides.length;
+            function layout() { var w = slides[0].offsetWidth, x = (stage.clientWidth - w) / 2 - cur * (w + 24); track.style.transform = 'translate3d(' + x + 'px,0,0)' }
+            function go(i, user) {
+                cur = (i + n) % n;
+                slides.forEach(function (s, k) { s.classList.toggle('is-active', k === cur); s.setAttribute('aria-hidden', k === cur ? 'false' : 'true') });
+                dots.forEach(function (d, k) { d.classList.remove('on', 'done'); void d.offsetWidth; if (k < cur) d.classList.add('done'); if (k === cur) d.classList.add('on') });
+                cap.classList.add('swap');
+                setTimeout(function () { var s = slides[cur]; document.getElementById('cap-n').textContent = s.dataset.name; document.getElementById('cap-s').textContent = s.dataset.short; document.getElementById('cap-a').setAttribute('href', s.dataset.href); cap.classList.remove('swap') }, user ? 0 : 250);
+                layout();
+            }
+            slides.forEach(function (s, k) { s.addEventListener('click', function () { if (k !== cur) go(k, 1) }) });
+            dots.forEach(function (d, k) { d.addEventListener('click', function () { go(k, 1) }) });
+            document.getElementById('tv-prev').addEventListener('click', function () { go(cur - 1, 1) });
+            document.getElementById('tv-next').addEventListener('click', function () { go(cur + 1, 1) });
+            stage.addEventListener('keydown', function (e) { if (e.key === 'ArrowLeft') { go(cur - 1, 1) } else if (e.key === 'ArrowRight') { go(cur + 1, 1) } });
+            dots.forEach(function (d) { d.addEventListener('animationend', function (e) { if (e.target.parentNode === d && d.classList.contains('on')) go(cur + 1) }, true) });
+            var sx = null; stage.addEventListener('pointerdown', function (e) { sx = e.clientX });
+            addEventListener('pointerup', function (e) { if (sx === null) return; var d = e.clientX - sx; sx = null; if (Math.abs(d) > 50) go(cur + (d < 0 ? 1 : -1), 1) });
+            [hero].forEach(function (h) { h.addEventListener('mouseenter', function () { h.classList.add('paused') }); h.addEventListener('mouseleave', function () { h.classList.remove('paused') }); h.addEventListener('focusin', function () { h.classList.add('paused') }); h.addEventListener('focusout', function () { h.classList.remove('paused') }) });
+            addEventListener('resize', layout);
+            go(0, 1);
+            if (rm) dots.forEach(function (d) { d.classList.remove('on') });
+
+            /* ---- Numbered points on each product ---- */
+            var secs = $('.v-tv-sec');
+            function act(sec, k) { $('.v-tv-pt', sec).forEach(function (p) { p.classList.toggle('is-on', +p.dataset.k === k) }); $('.v-tv-pl li', sec).forEach(function (l) { l.classList.toggle('is-on', +l.dataset.k === k) }); sec._k = k }
+            secs.forEach(function (sec) {
+                sec._k = 0;
+                $('.v-tv-pt', sec).concat($('.v-tv-pl li', sec)).forEach(function (el) { ['mouseenter', 'focus', 'click'].forEach(function (ev) { el.addEventListener(ev, function () { sec._hold = true; act(sec, +el.dataset.k) }) }); el.addEventListener('mouseleave', function () { sec._hold = false }) });
+            });
+            if (!rm) setInterval(function () { secs.forEach(function (sec) { if (sec._vis && !sec._hold) act(sec, (sec._k + 1) % 3) }) }, 3600);
+
+            /* ---- Story words ---- */
+            var sh = document.getElementById('story-h');
+            if (sh) { sh.innerHTML = sh.textContent.trim().split(/\s+/).map(function (w) { return '<span>' + w + '</span>' }).join(' ') }
+            var words = $('#story-h span'), story = document.getElementById('story'), pin = story.querySelector('.v-tv-pin'), frame = story.querySelector('.v-tv-frame'), vid = frame.querySelector('video'), ssteps = $('#story-steps li'), sled = document.getElementById('story-led'), prog = document.getElementById('tv-prog'), pars = $('[data-par]'), curS = -1;
+            var ease = function (t) { return 1 - Math.pow(1 - t, 3) };
+            function storyUpdate() {
+                var r = story.getBoundingClientRect(), h = innerHeight - 80, p = rm ? 1 : Math.max(0, Math.min(1, -r.top / (r.height - h - 0)));
+                if (rm) p = 1;
+                var e = ease(Math.min(1, p / .3)), m = innerWidth < 800;
+                frame.style.setProperty('--ins', ((m ? 5 : 12) * (1 - e)).toFixed(2) + '%');
+                frame.style.setProperty('--rad', (28 * (1 - e)).toFixed(1) + 'px');
+                frame.style.setProperty('--vs', (1.2 - .2 * p).toFixed(3));
+                var wp = Math.max(0, Math.min(1, (p - .06) / .5)) * words.length;
+                words.forEach(function (w, i) { w.classList.toggle('on', wp > i + .2) });
+                var si = p < .38 ? 0 : p < .7 ? 1 : 2;
+                if (si !== curS) { curS = si; ssteps.forEach(function (l, k) { l.classList.toggle('is-on', k === si) }) }
+                sled.style.transform = 'scaleX(' + p.toFixed(3) + ')';
+            }
+            /* ---- Scroll: slide-in reveals, scene LEDs, tab spy, parallax-free ---- */
+            var rev = $('[data-r]'), scenes = $('.v-tv-vis'), tabs = $('.v-tv-tab'), bar = document.getElementById('tv-bar'), tabSecs = tabs.map(function (t) { return document.querySelector(t.getAttribute('href')) }), curTab = -2;
+            function setTab(i) {
+                if (i === curTab) return; curTab = i;
+                tabs.forEach(function (t, k) { t.classList.toggle('is-on', k === i) });
+                if (i < 0) { bar.style.width = '0'; return }
+                var t = tabs[i]; bar.style.width = t.offsetWidth + 'px'; bar.style.transform = 'translateX(' + t.offsetLeft + 'px)';
+                t.parentNode.scrollTo({ left: t.offsetLeft - 24, behavior: rm ? 'auto' : 'smooth' });
+            }
+            var busy = false;
+            function check() {
+                busy = false; var h = innerHeight;
+                var de = document.documentElement; prog.style.transform = 'scaleX(' + (scrollY / Math.max(1, de.scrollHeight - h)).toFixed(4) + ')';
+                storyUpdate();
+                if (!rm) pars.forEach(function (el) { if (!el.isConnected) return; var b = el.getBoundingClientRect(); if (b.bottom < -200 || b.top > h + 200) return; var c = el.closest('section') || el.parentNode, cr = c.getBoundingClientRect(), pp = (cr.top + cr.height / 2 - h / 2) / h, y = pp * parseFloat(el.dataset.par); el.style.transform = 'translate3d(0,' + y.toFixed(1) + 'px,0)' + (el.dataset.sc ? ' scale(' + el.dataset.sc + ')' : '') });
+                rev.forEach(function (el) { if (!el.classList.contains('in') && el.getBoundingClientRect().top < h * .9) el.classList.add('in') });
+                scenes.forEach(function (el) { var r = el.getBoundingClientRect(); if (r.top < h * .85 && r.bottom > 0) el.classList.add('in') });
+                secs.forEach(function (s) { var r = s.getBoundingClientRect(); s._vis = r.top < h * .7 && r.bottom > h * .3 });
+                var a = -1; tabSecs.forEach(function (s, k) { if (s && s.getBoundingClientRect().top < h * .4) a = k });
+                var last = tabSecs[tabSecs.length - 1]; if (last && last.getBoundingClientRect().bottom < h * .3) a = -1;
+                setTab(a);
+            }
+            function sched() { if (!busy) { busy = true; requestAnimationFrame(check) } }
+            addEventListener('scroll', sched, { passive: true }); addEventListener('resize', sched); addEventListener('load', sched);
+            $('.v-tv-vis svg,.v-tv-vis .v-tv-photo').forEach(function (el) { el.setAttribute('data-par', '-18'); el.dataset.sc = '1.12'; pars.push(el) });
+            if (rm) $('.v-tv-bg video').forEach(function (v) { v.pause() });
+            check(); setTimeout(check, 400);
+        });
+
+    </script>
+    <script src="/assets/js/vizous-shared.js"></script>
+    <script src="/assets/js/vizous-motion.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            if (typeof renderFAQs === 'function') renderFAQs([
+                { q: 'Which TV unit type should I choose?', a: '<p>Use the comparison table on this page as a starting point. During the consultation we suggest a type based on your wall size, storage needs and budget.</p>' },
+                { q: 'Can wires and cables be hidden?', a: '<p>Yes. We plan concealed channels for power, HDMI and speaker cables before the unit is made.</p>' },
+                { q: 'Can I add LED lighting?', a: '<p>Yes. Backlit panels, underglow and shelf lights can be added to most designs.</p>' },
+                { q: 'How do I get a quote?', a: '<p>Share your wall size, TV size and preferred type in a consultation and the team will guide you through the next steps.</p>' }
+            ], 'A few helpful answers');
+            if (typeof renderRelatedServices === 'function') renderRelatedServices('modular-furniture');
+            if (typeof renderEnquirySection === 'function') renderEnquirySection('TV Units & Media Walls');
+            if (typeof bindGlobalConsultTriggers === 'function') bindGlobalConsultTriggers();
+            if (typeof injectStructuredData === 'function') injectStructuredData([
+                { name: 'Home', url: 'https://vizous.in/' }, { name: 'Services', url: 'https://vizous.in/services/' },
+                { name: 'Modular Furniture', url: 'https://vizous.in/services/modular-furniture/' },
+                { name: 'TV Units & Media Walls', url: 'https://vizous.in/services/modular-furniture/tv-units-media-walls/' }
+            ]);
+            if (window.VizousMotion) window.VizousMotion.init();
+        });
+    </script>
+</body>
+
+</html>

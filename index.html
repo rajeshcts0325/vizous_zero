@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vizous Interio — Luxury Interior Design &amp; Modular Furniture in Bhubaneswar</title>
+  <meta name="description"
+    content="Vizous Interio Private Limited offers custom modular kitchens, bedroom wardrobes, office furniture, and turnkey interior design in Bhubaneswar &amp; Raipur. In-house manufacturing &amp; 10-year warranty." />
+  <link rel="canonical" href="https://vizous.in/" />
+
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            alabaster: '#FAF8F5',
+            sand: '#F2ECE4',
+            taupe: '#E5DEC9',
+            charcoal: '#1D211F',
+            olive: {
+              700: '#303030',
+              800: '#171717',
+              900: '#0A0A0A'
+            },
+            walnut: {
+              500: '#FE8801',
+              600: '#E07700',
+              700: '#B85F00'
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'system-ui', 'sans-serif'],
+            script: ['"Alex Brush"', 'cursive']
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="/assets/css/vizous-tokens.css" />
+  <style>
+    .service-card-img {
+      transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .service-card:hover .service-card-img {
+      transform: scale(1.05);
+    }
+
+    .project-card:hover .project-img {
+      transform: scale(1.04);
+    }
+
+    .project-img {
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  </style>
+</head>
+
+<body class="antialiased selection:bg-[#FE8801] selection:text-white">
+
+  <!-- SECTION 1: STICKY HEADER & NAVIGATION -->
+  <header id="site-header" class="sticky top-0 z-40 bg-black border-b border-neutral-800 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="/" class="flex items-center h-full py-2 group focus:outline-none" aria-label="Vizous Interio Home">
+        <img src="./assets/images/logo2.png" alt="Vizous - Exploring Frontiers | Kitchen, Wardrobe, Furniture"
+          class="h-full max-h-14 sm:max-h-16 w-auto object-contain block" />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-normal text-stone-200" aria-label="Main Navigation">
+        <a href="#home" class="nav-link active text-[#FE8801] font-medium py-1">Home</a>
+        <a href="#about" class="nav-link hover:text-[#FE8801] transition-colors py-1">About Us</a>
+        <div class="relative group">
+          <a href="/services/"
+            class="nav-link hover:text-[#FE8801] inline-flex items-center gap-1.5 transition-colors py-1">
+            <span>Services</span>
+            <svg class="w-3.5 h-3.5 text-stone-400 group-hover:rotate-180 transition-transform" fill="none"
+              stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+          <!-- Services Dropdown -->
+          <div
+            class="absolute left-0 top-full pt-3 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div class="bg-black border border-neutral-800 shadow-xl rounded-sm py-2">
+              <a href="/services/"
+                class="block px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#FE8801] border-b border-neutral-800 hover:bg-neutral-900">
+                All Interior Services
+              </a>
+              <a href="/services/modular-kitchen/"
+                class="block px-4 py-2.5 text-xs text-stone-200 hover:bg-neutral-900 hover:text-[#FE8801] transition-colors">
+                <span class="text-[10px] text-[#FE8801] font-mono mr-1.5">01.</span> Modular Kitchen
+              </a>
+              <a href="/services/wardrobe-design/"
+                class="block px-4 py-2.5 text-xs text-stone-200 hover:bg-neutral-900 hover:text-[#FE8801] transition-colors">
+                <span class="text-[10px] text-[#FE8801] font-mono mr-1.5">02.</span> Wardrobe Design
+              </a>
+              <a href="/services/office-furniture/"
+                class="block px-4 py-2.5 text-xs text-stone-200 hover:bg-neutral-900 hover:text-[#FE8801] transition-colors">
+                <span class="text-[10px] text-[#FE8801] font-mono mr-1.5">03.</span> Office Furniture
+              </a>
+              <a href="/services/modular-furniture/"
+                class="block px-4 py-2.5 text-xs text-stone-200 hover:bg-neutral-900 hover:text-[#FE8801] transition-colors">
+                <span class="text-[10px] text-[#FE8801] font-mono mr-1.5">04.</span> Modular Furniture
+              </a>
+            </div>
+          </div>
+        </div>
+        <a href="#projects" class="nav-link hover:text-[#FE8801] transition-colors py-1">Projects</a>
+        <a href="#blog" class="nav-link hover:text-[#FE8801] transition-colors py-1">Blog</a>
+        <a href="#contact" class="nav-link hover:text-[#FE8801] transition-colors py-1">Contact</a>
+      </nav>
+
+      <!-- Desktop CTA & Mobile Menu Button -->
+      <div class="flex items-center gap-3">
+        <a href="tel:+919938117844"
+          class="hidden xl:inline-flex items-center gap-1.5 text-xs font-medium text-stone-200 hover:text-[#FE8801] transition-colors mr-1">
+          <svg class="w-3.5 h-3.5 text-[#FE8801]" fill="none" stroke="currentColor" stroke-width="1.8"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+          <span>+91-9938117844</span>
+        </a>
+
+        <button id="header-consult-btn" type="button"
+          class="hidden sm:inline-flex items-center gap-2.5 bg-[#FE8801] hover:bg-[#E07700] text-black text-xs sm:text-sm font-medium px-5 py-2.5 rounded-full transition-all duration-300 shadow-sm hover:shadow">
+          <span>Get a Free Consultation</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6" />
+          </svg>
+        </button>
+
+        <button id="mobile-menu-btn" type="button"
+          class="lg:hidden p-2.5 rounded-md text-white hover:bg-neutral-800 focus:outline-none"
+          aria-label="Toggle Menu">
+          <svg id="mobile-menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+          <svg id="mobile-menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="1.8"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Responsive Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-black border-b border-neutral-800 px-6 pt-3 pb-6 space-y-3">
+      <div class="flex flex-col space-y-2 text-sm font-medium text-stone-100">
+        <a href="#home" class="mobile-nav-link py-2 border-b border-neutral-800">Home</a>
+        <a href="#about" class="mobile-nav-link py-2 border-b border-neutral-800">About Us</a>
+        <a href="/services/" class="py-2 border-b border-neutral-800 text-[#FE8801] font-semibold">Services Hub
+          (/services/)</a>
+        <div class="pl-3 space-y-1.5 pb-2 border-b border-neutral-800">
+          <a href="/services/modular-kitchen/" class="block py-1 text-xs text-stone-400">01. Modular Kitchen</a>
+          <a href="/services/wardrobe-design/" class="block py-1 text-xs text-stone-400">02. Wardrobe Design</a>
+          <a href="/services/office-furniture/" class="block py-1 text-xs text-stone-400">03. Office Furniture</a>
+          <a href="/services/modular-furniture/" class="block py-1 text-xs text-stone-400">04. Modular Furniture</a>
+        </div>
+        <a href="#projects" class="mobile-nav-link py-2 border-b border-neutral-800">Projects</a>
+        <a href="#blog" class="mobile-nav-link py-2 border-b border-neutral-800">Blog</a>
+        <a href="#contact" class="mobile-nav-link py-2">Contact</a>
+      </div>
+      <button id="mobile-consult-btn" type="button"
+        class="w-full mt-2 inline-flex items-center justify-center gap-2 bg-[#FE8801] hover:bg-[#E07700] text-black text-sm font-medium px-5 py-3 rounded-full">
+        <span>Get a Free Consultation</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECTION 2: HERO BANNER -->
+    <section id="home"
+      class="relative w-full min-h-[560px] lg:min-h-[650px] flex items-center overflow-hidden bg-charcoal">
+      <div class="absolute inset-0 z-0">
+        <img id="hero-bg-img"
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=85"
+          alt="Luxurious contemporary living room interior by Vizous Interio"
+          class="w-full h-full object-cover object-center transition-all duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-r from-[#171C19]/95 via-[#171C19]/70 to-transparent"></div>
+        <div class="absolute inset-0 bg-black/15"></div>
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20 lg:py-28">
+        <div class="max-w-xl text-white">
+          <p id="hero-kicker"
+            class="text-[11px] sm:text-xs tracking-[0.28em] uppercase text-stone-300 font-medium mb-4">
+            INTERIOR DESIGN &amp; FURNISHING
+          </p>
+          <h1 id="hero-headline"
+            class="font-editorial text-4xl sm:text-6xl lg:text-[64px] leading-[1.08] font-normal text-white mb-6">
+            Beautiful Spaces.<br />
+            <span class="italic font-normal text-stone-100">Better Living.</span>
+          </h1>
+          <p id="hero-subtext" class="text-sm sm:text-base text-stone-200/90 leading-relaxed mb-9 max-w-md font-light">
+            We design and create interiors that reflect your style, meet your needs, and bring your vision to life.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="/services/"
+              class="inline-flex items-center gap-3 bg-white hover:bg-sand text-charcoal text-xs sm:text-sm font-medium px-6 py-3.5 rounded-full transition-all duration-300 shadow-md">
+              <span>Explore Our Services</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6" />
+              </svg>
+            </a>
+            <button id="hero-consult-btn" type="button"
+              class="inline-flex items-center gap-2.5 border border-white/50 hover:border-white bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white text-xs sm:text-sm font-medium px-6 py-3.5 rounded-full transition-all duration-300">
+              <span>Book a Consultation</span>
+            </button>
+          </div>
+
+          <div class="mt-14 flex items-center gap-2.5" aria-label="Hero Slide Indicators">
+            <button type="button" data-slide="0"
+              class="hero-dot h-1 w-9 bg-white rounded-full transition-all duration-300" aria-label="Slide 1"></button>
+            <button type="button" data-slide="1"
+              class="hero-dot h-1 w-4 bg-white/40 hover:bg-white/70 rounded-full transition-all duration-300"
+              aria-label="Slide 2"></button>
+            <button type="button" data-slide="2"
+              class="hero-dot h-1 w-4 bg-white/40 hover:bg-white/70 rounded-full transition-all duration-300"
+              aria-label="Slide 3"></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="absolute bottom-7 right-6 sm:right-10 z-20 flex items-center gap-2.5">
+        <button id="hero-prev-btn" type="button"
+          class="w-10 h-10 rounded-full border border-white/40 bg-black/25 hover:bg-white hover:text-charcoal text-white backdrop-blur-sm flex items-center justify-center transition-all"
+          aria-label="Previous Showcase">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button id="hero-next-btn" type="button"
+          class="w-10 h-10 rounded-full border border-white/40 bg-black/25 hover:bg-white hover:text-charcoal text-white backdrop-blur-sm flex items-center justify-center transition-all"
+          aria-label="Next Showcase">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- SECTION 3: OUR SERVICES (LINKED TO DEDICATED DETAIL PAGES) -->
+    <section id="services" aria-labelledby="services-heading"
+      class="py-20 sm:py-24 lg:py-28 bg-alabaster border-b border-taupe/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Editorial Section Header -->
+        <div
+          class="vz-reveal grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-end pb-10 lg:pb-14 border-b border-taupe/70 mb-10 lg:mb-14">
+          <div class="lg:col-span-7">
+            <p class="text-[11px] tracking-[0.28em] uppercase text-walnut-600 font-medium mb-3">
+              OUR SERVICES
+            </p>
+            <h2 id="services-heading"
+              class="font-serif text-3xl sm:text-4xl lg:text-[46px] leading-[1.12] text-charcoal font-medium tracking-tight">
+              Thoughtfully Designed. <span class="italic font-normal text-walnut-700">Beautifully Lived.</span>
+            </h2>
+          </div>
+
+          <div
+            class="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col justify-between sm:items-end lg:items-start gap-6">
+            <p class="text-sm sm:text-[15px] text-olive-700 leading-relaxed max-w-md">
+              From bespoke kitchens to beautifully crafted wardrobes and complete interiors, we create spaces that bring
+              design, comfort, and functionality together.
+            </p>
+            <a href="/services/"
+              class="group inline-flex items-center gap-2.5 text-xs font-medium uppercase tracking-[0.2em] text-charcoal hover:text-walnut-600 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-walnut-600">
+              <span>EXPLORE ALL SERVICES</span>
+              <span aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Asymmetric Editorial Service Showcase -->
+        <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5 lg:gap-6">
+          <!-- Populated dynamically via renderServices() -->
+        </div>
+
+        <!-- Bottom Conversion CTA -->
+        <div
+          class="vz-reveal mt-14 lg:mt-16 pt-10 lg:pt-12 border-t border-taupe/80 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 bg-sand/70 px-6 py-8 sm:px-10 sm:py-9 rounded-sm border border-taupe/60">
+          <div>
+            <h3 class="font-serif text-2xl sm:text-3xl text-charcoal font-medium tracking-tight">
+              Have a Space in Mind?
+            </h3>
+            <p class="text-sm text-olive-700 mt-1.5">
+              Let's create an interior that feels unmistakably yours.
+            </p>
+          </div>
+          <div class="flex-shrink-0">
+            <button type="button" id="services-consult-btn"
+              class="group inline-flex items-center justify-center gap-3 bg-charcoal hover:bg-walnut-700 text-alabaster text-xs font-medium uppercase tracking-[0.2em] px-7 py-4 rounded-sm transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-walnut-600">
+              <span>BOOK A DESIGN CONSULTATION</span>
+              <span aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: ABOUT US (SPLIT LAYOUT) -->
+    <section id="about" class="bg-sand/70 border-y border-stone-200/70">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+          <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-12 min-h-[420px]">
+            <div class="sm:col-span-7 relative overflow-hidden min-h-[280px]">
+              <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=85"
+                alt="Warm contemporary oak dining room interior by Vizous Interio" class="w-full h-full object-cover" />
+            </div>
+            <div
+              class="sm:col-span-5 bg-olive-800 text-stone-200 flex flex-col items-center justify-center p-8 text-center relative overflow-hidden">
+              <div
+                class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]">
+              </div>
+              <p class="font-handwriting text-4xl sm:text-[42px] leading-tight text-stone-200/90 -rotate-6 select-none">
+                Your Space,<br />Our Inspiration
+              </p>
+              <span class="mt-6 w-10 h-[1px] bg-walnut-500/60"></span>
+              <span class="mt-3 text-[10px] uppercase tracking-[0.25em] text-stone-400">3,000+ Happy Customers</span>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 px-6 sm:px-12 lg:px-14 py-14 lg:py-20 flex flex-col justify-center">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-stone-500 font-medium mb-2.5">ABOUT VIZOUS INTERIO
+            </p>
+            <h2
+              class="font-editorial text-3xl sm:text-4xl lg:text-[42px] leading-[1.15] text-charcoal font-medium mb-5">
+              Designing Spaces,<br />Creating Happiness
+            </h2>
+            <p class="text-sm text-stone-600 leading-relaxed mb-8">
+              We are a team of passionate designers and master craftsmen dedicated to creating beautiful, functional,
+              and personalized interiors. With our own manufacturing unit at Patrapada, Bhubaneswar and trained in-house
+              installation experts, we turn your everyday living and working environments into inspiring sanctuaries.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-stone-300/80 mb-9">
+              <div class="flex items-start gap-3 sm:border-r sm:border-stone-300/70 sm:pr-3">
+                <div
+                  class="w-9 h-9 rounded-full bg-alabaster border border-stone-300 flex items-center justify-center shrink-0 text-walnut-600 mt-0.5">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 3h12l4 6-10 12L2 9l4-6z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-xs font-semibold text-charcoal leading-snug">In-House<br />Manufacturing</h3>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 sm:border-r sm:border-stone-300/70 sm:pr-3">
+                <div
+                  class="w-9 h-9 rounded-full bg-alabaster border border-stone-300 flex items-center justify-center shrink-0 text-walnut-600 mt-0.5">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-xs font-semibold text-charcoal leading-snug">In-House<br />Installation Team</h3>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-9 h-9 rounded-full bg-alabaster border border-stone-300 flex items-center justify-center shrink-0 text-walnut-600 mt-0.5">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-xs font-semibold text-charcoal leading-snug">10-Year<br />Warranty Support</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3">
+              <a href="/services/"
+                class="inline-flex items-center gap-2.5 bg-[#FE8801] hover:bg-olive-700 text-white text-xs sm:text-sm font-medium px-6 py-3 rounded-full transition-all duration-300">
+                <span>Explore Our Services</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6" />
+                </svg>
+              </a>
+              <button id="discover-story-btn" type="button"
+                class="inline-flex items-center gap-2 border border-stone-400 hover:border-charcoal text-charcoal text-xs sm:text-sm font-medium px-5 py-3 rounded-full transition-all">
+                <span>Our Manufacturing Story</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: FEATURED PROJECTS -->
+    <section id="projects" class="py-20 lg:py-24 bg-black">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+          <div>
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[#FE8801] font-medium mb-2">FEATURED PROJECTS</p>
+            <h2 class="font-editorial text-3xl sm:text-4xl lg:text-[42px] leading-[1.15] text-white font-medium">
+              Spaces We’ve Designed
+            </h2>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3">
+            <div class="flex flex-wrap items-center gap-1.5 bg-neutral-900 p-1 rounded-full border border-neutral-800">
+              <button type="button" data-filter="all"
+                class="project-filter-btn active px-3.5 py-1.5 rounded-full text-xs font-medium bg-[#FE8801] text-black transition-all">All</button>
+              <button type="button" data-filter="Kitchen"
+                class="project-filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium text-stone-300 hover:text-[#FE8801] transition-all">Kitchen</button>
+              <button type="button" data-filter="Bedroom"
+                class="project-filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium text-stone-300 hover:text-[#FE8801] transition-all">Bedroom</button>
+              <button type="button" data-filter="Living"
+                class="project-filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium text-stone-300 hover:text-[#FE8801] transition-all">Living</button>
+              <button type="button" data-filter="Office"
+                class="project-filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium text-stone-300 hover:text-[#FE8801] transition-all">Office</button>
+            </div>
+
+            <button id="view-all-projects-btn" type="button"
+              class="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-white hover:text-[#FE8801] pl-2 transition-colors">
+              <span id="view-all-projects-label">View All Projects</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div id="projects-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: WHY CHOOSE US -->
+    <section id="why-us" class="py-20 lg:py-24 bg-sand/50 border-t border-stone-200/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          <div class="lg:col-span-4">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-stone-500 font-medium mb-2.5">WHY CHOOSE VIZOUS</p>
+            <h2
+              class="font-editorial text-3xl sm:text-4xl lg:text-[42px] leading-[1.12] text-charcoal font-medium mb-5">
+              Thoughtful Design.<br />Exceptional Execution.
+            </h2>
+            <p class="text-sm text-stone-600 leading-relaxed mb-6">
+              Every project is guided by architectural discipline, in-house manufacturing in Bhubaneswar, and bespoke
+              modular engineering crafted for longevity.
+            </p>
+            <div class="p-6 bg-alabaster border border-stone-200/90 rounded-sm space-y-4">
+              <div class="flex items-center justify-between border-b border-stone-200 pb-3">
+                <span class="font-editorial text-3xl font-semibold text-charcoal">3,000+</span>
+                <span class="text-xs text-stone-600 uppercase tracking-wider">Happy Customers</span>
+              </div>
+              <div class="flex items-center justify-between border-b border-stone-200 pb-3">
+                <span class="font-editorial text-3xl font-semibold text-charcoal">10-Year</span>
+                <span class="text-xs text-stone-600 uppercase tracking-wider">Warranty &amp; Support</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="font-editorial text-3xl font-semibold text-charcoal">100%</span>
+                <span class="text-xs text-stone-600 uppercase tracking-wider">Customized Solutions</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div
+              class="bg-alabaster border border-stone-200/90 p-6 rounded-sm hover:border-[#FE8801]/60 transition-all">
+              <h3 class="font-editorial text-xl font-semibold text-charcoal mb-2">Tailored to Your Lifestyle</h3>
+              <p class="text-xs text-stone-600 leading-relaxed">
+                Designs tailored to your room dimensions, ergonomic habits, and daily routines.
+              </p>
+            </div>
+
+            <div
+              class="bg-alabaster border border-stone-200/90 p-6 rounded-sm hover:border-[#FE8801]/60 transition-all">
+              <h3 class="font-editorial text-xl font-semibold text-charcoal mb-2">In-House Manufacturing</h3>
+              <p class="text-xs text-stone-600 leading-relaxed">
+                Produced at our own factory in Bhagabanpur Industrial Estate, Patrapada, Bhubaneswar.
+              </p>
+            </div>
+
+            <div
+              class="bg-alabaster border border-stone-200/90 p-6 rounded-sm hover:border-[#FE8801]/60 transition-all">
+              <h3 class="font-editorial text-xl font-semibold text-charcoal mb-2">Smart Space Optimization</h3>
+              <p class="text-xs text-stone-600 leading-relaxed">
+                Smart storage and space optimization that maximizes every square foot with concealed organization.
+              </p>
+            </div>
+
+            <div
+              class="bg-alabaster border border-stone-200/90 p-6 rounded-sm hover:border-[#FE8801]/60 transition-all">
+              <h3 class="font-editorial text-xl font-semibold text-charcoal mb-2">In-House Installation</h3>
+              <p class="text-xs text-stone-600 leading-relaxed">
+                Installed by trained Vizous technicians for clean alignment, hardware longevity, and finish quality.
+              </p>
+            </div>
+
+            <div
+              class="bg-alabaster border border-stone-200/90 p-6 rounded-sm hover:border-[#FE8801]/60 transition-all sm:col-span-2 lg:col-span-2">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                  <h3 class="font-editorial text-xl font-semibold text-charcoal mb-2">Attention to Detail from Concept
+                    to Completion</h3>
+                  <p class="text-xs text-stone-600 leading-relaxed max-w-md">
+                    From 3D visualizations and factory-precision modular joinery to final site handover, every detail is
+                    inspected.
+                  </p>
+                </div>
+                <a href="/services/"
+                  class="shrink-0 bg-olive-800 hover:bg-charcoal text-white text-xs font-medium px-5 py-3 rounded-full transition-colors text-center">
+                  View Service Process &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESIGN JOURNAL / BLOG SECTION -->
+    <section id="blog" class="py-16 lg:py-20 bg-alabaster border-t border-stone-200/70">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10">
+          <div>
+            <p class="text-[11px] tracking-[0.25em] uppercase text-stone-500 font-medium mb-2">DESIGN JOURNAL</p>
+            <h2 class="font-editorial text-3xl sm:text-4xl text-charcoal font-medium">Curated Insights &amp; Guides</h2>
+          </div>
+          <p class="text-xs text-stone-500 mt-2 sm:mt-0">Practical guides on materials, spatial flow, and timeless
+            modular living.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <article
+            class="bg-white border border-stone-200/80 p-6 flex flex-col justify-between hover:border-[#FE8801]/60 transition-all">
+            <div>
+              <span class="text-[10px] uppercase tracking-[0.2em] text-walnut-600 font-medium">Kitchen
+                Architecture</span>
+              <h3 class="font-editorial text-2xl text-charcoal font-medium mt-2 mb-3">Modular Kitchen Guide: Choosing
+                Layouts &amp; Finishes</h3>
+              <p class="text-xs text-stone-600 leading-relaxed mb-5">
+                Discover how L-shaped, parallel, and island layouts pair with matte laminates and acrylic finishes in
+                modern Indian homes.
+              </p>
+            </div>
+            <a href="/services/modular-kitchen/"
+              class="inline-flex items-center gap-2 text-xs font-medium text-charcoal hover:text-walnut-600">
+              <span>Explore Kitchen Guide</span>
+              <span>&rarr;</span>
+            </a>
+          </article>
+
+          <article
+            class="bg-white border border-stone-200/80 p-6 flex flex-col justify-between hover:border-[#FE8801]/60 transition-all">
+            <div>
+              <span class="text-[10px] uppercase tracking-[0.2em] text-walnut-600 font-medium">Spatial Planning</span>
+              <h3 class="font-editorial text-2xl text-charcoal font-medium mt-2 mb-3">Sliding vs. Hinged Wardrobes for
+                Master Suites</h3>
+              <p class="text-xs text-stone-600 leading-relaxed mb-5">
+                How floor-to-ceiling wardrobes, integrated dressing mirrors, and compartmentalized organizers maximize
+                bedroom storage.
+              </p>
+            </div>
+            <a href="/services/wardrobe-design/"
+              class="inline-flex items-center gap-2 text-xs font-medium text-charcoal hover:text-walnut-600">
+              <span>Explore Wardrobe Guide</span>
+              <span>&rarr;</span>
+            </a>
+          </article>
+
+          <article
+            class="bg-white border border-stone-200/80 p-6 flex flex-col justify-between hover:border-[#FE8801]/60 transition-all">
+            <div>
+              <span class="text-[10px] uppercase tracking-[0.2em] text-walnut-600 font-medium">Commercial &amp;
+                Home</span>
+              <h3 class="font-editorial text-2xl text-charcoal font-medium mt-2 mb-3">Planning Ergonomic Workstations
+                &amp; Custom Units</h3>
+              <p class="text-xs text-stone-600 leading-relaxed mb-5">
+                Practical ways to integrate cable management, filing storage, and cohesive finishes across offices and
+                living spaces.
+              </p>
+            </div>
+            <a href="/services/office-furniture/"
+              class="inline-flex items-center gap-2 text-xs font-medium text-charcoal hover:text-walnut-600">
+              <span>Explore Office Furniture</span>
+              <span>&rarr;</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: CONSULTATION CTA BANNER -->
+    <section class="relative py-20 lg:py-24 overflow-hidden bg-charcoal">
+      <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80"
+          alt="Sophisticated living space backdrop" class="w-full h-full object-cover object-center opacity-35" />
+        <div class="absolute inset-0 bg-gradient-to-r from-[#191E1B]/95 via-[#191E1B]/85 to-[#191E1B]/75"></div>
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-6">
+            <h2 class="font-editorial text-3xl sm:text-5xl text-white leading-[1.15] font-normal">
+              Let’s Create Your<br />Dream Space Together
+            </h2>
+          </div>
+          <div class="lg:col-span-6 flex flex-col items-start lg:pl-8">
+            <p class="text-sm sm:text-base text-stone-300 leading-relaxed mb-6 max-w-lg font-light">
+              Whether you're planning a new home, renovating your kitchen or wardrobe, or designing your office — we’re
+              here to help.
+            </p>
+            <div class="flex flex-wrap items-center gap-3.5">
+              <button id="banner-consult-btn" type="button"
+                class="inline-flex items-center gap-3 bg-white hover:bg-sand text-charcoal text-xs sm:text-sm font-medium px-7 py-3.5 rounded-full transition-all duration-300 shadow-md">
+                <span>Book a Consultation</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6" />
+                </svg>
+              </button>
+              <a href="https://wa.me/919938117844" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 border border-white/40 hover:border-white text-white text-xs sm:text-sm font-medium px-6 py-3.5 rounded-full transition-all">
+                <span>WhatsApp +91-9938117844</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SECTION 8: VERIFIED VIZOUS FOOTER -->
+  <footer id="contact" class="bg-black text-stone-300 pt-16 pb-12 border-t-2 border-[#FE8801]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-neutral-800">
+        <div class="lg:col-span-4">
+          <a href="#home" class="inline-block mb-4" aria-label="Vizous Interio Home">
+            <img src="./assets/images/logo2.png" alt="Vizous - Exploring Frontiers | Kitchen, Wardrobe, Furniture"
+              class="h-16 sm:h-20 max-w-full w-auto object-contain block" />
+          </a>
+          <p class="text-xs text-stone-400 leading-relaxed max-w-sm mb-6">
+            Bespoke residential and commercial interiors paired with precision in-house manufactured modular furniture
+            in Bhubaneswar.
+          </p>
+          <div class="flex items-center gap-2.5">
+            <a href="https://wa.me/919938117844" target="_blank" rel="noopener noreferrer"
+              class="text-xs bg-white/10 hover:bg-[#FE8801] hover:text-black text-white px-3.5 py-2 rounded-full transition-colors">
+              WhatsApp Us
+            </a>
+            <a href="tel:+919938117844"
+              class="text-xs border border-white/15 hover:border-[#FE8801] hover:text-[#FE8801] text-stone-200 px-3.5 py-2 rounded-full transition-colors">
+              +91-9938117844
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2">
+          <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-[#FE8801] mb-4">Quick Links</h3>
+          <ul class="space-y-2.5 text-xs text-stone-400">
+            <li><a href="#home" class="hover:text-[#FE8801] transition-colors">Home</a></li>
+            <li><a href="#about" class="hover:text-[#FE8801] transition-colors">About Us</a></li>
+            <li><a href="/services/" class="hover:text-[#FE8801] transition-colors">Services</a></li>
+            <li><a href="#projects" class="hover:text-[#FE8801] transition-colors">Projects</a></li>
+            <li><a href="#blog" class="hover:text-[#FE8801] transition-colors">Blog</a></li>
+            <li><a href="#contact" class="hover:text-[#FE8801] transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-3">
+          <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-[#FE8801] mb-4">Our Services</h3>
+          <ul class="space-y-2.5 text-xs text-stone-400">
+            <li><a href="/services/modular-kitchen/" class="hover:text-[#FE8801] transition-colors">Modular Kitchen
+                Design</a></li>
+            <li><a href="/services/wardrobe-design/" class="hover:text-[#FE8801] transition-colors">Wardrobe Design</a>
+            </li>
+            <li><a href="/services/office-furniture/" class="hover:text-[#FE8801] transition-colors">Office
+                Furniture</a></li>
+            <li><a href="/services/modular-furniture/" class="hover:text-[#FE8801] transition-colors">Custom Modular
+                Furniture</a></li>
+            <li><a href="/services/" class="hover:text-[#FE8801] transition-colors">All Interior Services</a></li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-3">
+          <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-[#FE8801] mb-4">Corporate &amp; Factory</h3>
+          <ul class="space-y-3 text-xs text-stone-400">
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-[#FE8801] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="1.7"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span><strong class="text-stone-200">Corporate Office:</strong> 1st Floor, Laxmi Sagar Square, Plot
+                301/1516, Cuttack Rd, Near Sunshine Hospital, Laxmisagar, Bhubaneswar 751006</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-[#FE8801] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="1.7"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5" />
+              </svg>
+              <span><strong class="text-stone-200">Factory:</strong> Plot #12, Bhagabanpur Industrial Estate, Patrapada,
+                Bhubaneswar 751019</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <svg class="w-4 h-4 text-[#FE8801] shrink-0" fill="none" stroke="currentColor" stroke-width="1.7"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <a href="mailto:info@vizous.in" class="hover:text-[#FE8801] transition-colors">info@vizous.in</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-stone-400">
+        <p>&copy; 2026 VIZOUS INTERIO PRIVATE LIMITED. All rights reserved.</p>
+        <p>Mon – Sun: 10:00 AM – 8:00 PM &bull; Bhubaneswar &amp; Raipur</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CONSULTATION BOOKING MODAL -->
+  <div id="consultation-modal"
+    class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/65 backdrop-blur-sm">
+    <div class="bg-alabaster border border-stone-300 max-w-lg w-full rounded-sm shadow-2xl overflow-hidden fade-in">
+      <div class="bg-olive-800 text-white px-6 py-5 flex items-center justify-between">
+        <div>
+          <p class="text-[10px] uppercase tracking-[0.24em] text-stone-300">Complimentary Design Session</p>
+          <h3 class="font-editorial text-2xl sm:text-3xl font-normal mt-0.5">Book a Free Consultation</h3>
+        </div>
+        <button id="close-consult-modal" type="button" class="text-stone-300 hover:text-white p-1.5"
+          aria-label="Close Modal">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <form id="consultation-form" class="p-6 space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="consult-name" class="block text-xs font-medium text-charcoal mb-1">Full Name *</label>
+            <input id="consult-name" type="text" required placeholder="Aarav Mohanty"
+              class="w-full text-xs bg-white border border-stone-300 rounded-sm px-3.5 py-2.5 text-charcoal focus:outline-none focus:border-walnut-600" />
+          </div>
+          <div>
+            <label for="consult-phone" class="block text-xs font-medium text-charcoal mb-1">Phone Number *</label>
+            <input id="consult-phone" type="tel" required placeholder="+91 99381 XXXXX"
+              class="w-full text-xs bg-white border border-stone-300 rounded-sm px-3.5 py-2.5 text-charcoal focus:outline-none focus:border-walnut-600" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="consult-service" class="block text-xs font-medium text-charcoal mb-1">Primary Interest</label>
+            <select id="consult-service"
+              class="w-full text-xs bg-white border border-stone-300 rounded-sm px-3.5 py-2.5 text-charcoal focus:outline-none focus:border-walnut-600">
+              <option value="Modular Kitchen">Modular Kitchen</option>
+              <option value="Wardrobe Design">Wardrobe Design</option>
+              <option value="Office Furniture">Office Furniture</option>
+              <option value="Modular Furniture">Custom Modular Furniture</option>
+              <option value="Full Home Interior">Full Home Turnkey Interior</option>
+            </select>
+          </div>
+          <div>
+            <label for="consult-location" class="block text-xs font-medium text-charcoal mb-1">Property Location
+              *</label>
+            <input id="consult-location" type="text" required placeholder="Bhubaneswar / Cuttack / Raipur"
+              class="w-full text-xs bg-white border border-stone-300 rounded-sm px-3.5 py-2.5 text-charcoal focus:outline-none focus:border-walnut-600" />
+          </div>
+        </div>
+
+        <div>
+          <label for="consult-notes" class="block text-xs font-medium text-charcoal mb-1">Project Requirements</label>
+          <textarea id="consult-notes" rows="3" placeholder="Tell us about your room dimensions, layout, and vision..."
+            class="w-full text-xs bg-white border border-stone-300 rounded-sm px-3.5 py-2.5 text-charcoal focus:outline-none focus:border-walnut-600"></textarea>
+        </div>
+
+        <div class="pt-2 flex items-center justify-end gap-3">
+          <button id="cancel-consult-btn" type="button"
+            class="text-xs text-stone-600 hover:text-charcoal px-4 py-2.5">Cancel</button>
+          <button type="submit"
+            class="inline-flex items-center gap-2 bg-olive-800 hover:bg-charcoal text-white text-xs font-medium px-6 py-3 rounded-full transition-colors">
+            <span>Continue via WhatsApp</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6" />
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- UNIVERSAL DETAIL MODAL -->
+  <div id="detail-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/65 backdrop-blur-sm">
+    <div
+      class="bg-alabaster border border-stone-300 max-w-2xl w-full rounded-sm shadow-2xl overflow-hidden fade-in max-h-[90vh] flex flex-col">
+      <div class="bg-charcoal text-white px-6 py-4 flex items-center justify-between shrink-0">
+        <div>
+          <p id="detail-modal-kicker" class="text-[10px] uppercase tracking-[0.24em] text-walnut-500">VIZOUS INTERIO</p>
+          <h3 id="detail-modal-title" class="font-editorial text-2xl font-normal">Details</h3>
+        </div>
+        <button id="close-detail-modal" type="button" class="text-stone-300 hover:text-white p-1.5"
+          aria-label="Close Detail Modal">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div id="detail-modal-body" class="p-6 overflow-y-auto space-y-4 text-xs text-stone-700 leading-relaxed"></div>
+      <div class="px-6 py-4 bg-sand/70 border-t border-stone-200 flex items-center justify-between shrink-0">
+        <span id="detail-modal-meta" class="text-[11px] text-stone-500 font-medium">10-Year Warranty &bull; Custom
+          Sized</span>
+        <button id="detail-modal-cta" type="button"
+          class="inline-flex items-center gap-2 bg-olive-800 hover:bg-charcoal text-white text-xs font-medium px-5 py-2.5 rounded-full transition-colors">
+          <span>Book Consultation</span>
+          <span>&rarr;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/js/vizous-motion.js" defer></script>
+
+  <script>
+    const heroSlides = [
+      {
+        kicker: 'INTERIOR DESIGN & FURNISHING',
+        headline: 'Beautiful Spaces.<br /><span class="italic font-normal text-stone-100">Better Living.</span>',
+        subtext: 'We design and create interiors that reflect your style, meet your needs, and bring your vision to life.',
+        image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=85'
+      },
+      {
+        kicker: 'BESPOKE CULINARY ARCHITECTURE',
+        headline: 'Culinary Elegance.<br /><span class="italic font-normal text-stone-100">Precision Crafted.</span>',
+        subtext: 'Ergonomic modular kitchens manufactured in-house in Bhubaneswar with customized storage and contemporary finishes.',
+        image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1920&q=85'
+      },
+      {
+        kicker: 'RESTFUL SANCTUARIES',
+        headline: 'Timeless Comfort.<br /><span class="italic font-normal text-stone-100">Tailored Serenity.</span>',
+        subtext: 'Custom sliding and hinged wardrobes, bedroom furniture, and modular units designed around your daily ritual.',
+        image: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=1920&q=85'
+      }
+    ];
+
+    const servicesData = [
+      {
+        number: '01',
+        title: 'Modular Kitchen',
+        shortTitle: 'Modular Kitchen',
+        desc: 'Functional, elegant kitchens designed around your lifestyle.',
+        featuredNote: 'Precision-engineered in our Bhubaneswar facility with ergonomic workflows, bespoke cabinetry, and enduring finishes.',
+        route: '/services/modular-kitchen/',
+        image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=85',
+        alt: 'Contemporary luxury modular kitchen with bespoke island and warm architectural lighting',
+        featured: true
+      },
+      {
+        number: '02',
+        title: 'Wardrobe Design',
+        shortTitle: 'Wardrobe Design',
+        desc: 'Smart storage solutions with refined finishes and modern aesthetics.',
+        route: '/services/wardrobe-design/',
+        image: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=900&q=80',
+        alt: 'Custom walk-in and sliding wardrobe system with tailored organizers and warm wood finishes',
+        featured: false
+      },
+      {
+        number: '03',
+        title: 'Beds & Bedroom',
+        shortTitle: 'Beds & Bedroom',
+        desc: 'Comfortable beds and bedroom furniture designed for restful living.',
+        route: '/services/modular-furniture/',
+        image: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=900&q=80',
+        alt: 'Serene luxury bedroom interior featuring bespoke upholstered bed and side tables',
+        featured: false
+      },
+      {
+        number: '04',
+        title: 'Office Furniture',
+        shortTitle: 'Office Furniture',
+        desc: 'Ergonomic and professional furniture for productive workspaces.',
+        route: '/services/office-furniture/',
+        image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
+        alt: 'Sophisticated executive office workspace with custom desks and ergonomic seating',
+        featured: false
+      },
+      {
+        number: '05',
+        title: 'Modular Furniture',
+        shortTitle: 'Modular Furniture',
+        desc: 'Versatile, space-efficient furniture tailored to your requirements.',
+        route: '/services/modular-furniture/',
+        image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80',
+        alt: 'Bespoke living room modular console, wall paneling, and custom furniture arrangement',
+        featured: false
+      },
+      {
+        number: '06',
+        title: 'Home Decor & Turnkey',
+        shortTitle: 'Home Decor & Turnkey',
+        desc: 'Thoughtfully selected decor and complete turnkey interior solutions.',
+        route: '/services/',
+        image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80',
+        alt: 'Complete luxury turnkey residential interior with curated lighting, textures, and decor',
+        featured: false
+      }
+    ];
+
+    const projectsData = [
+      {
+        id: 'proj-1',
+        title: 'Contemporary Modular Kitchen',
+        location: 'Bhubaneswar',
+        category: 'Kitchen',
+        route: '/services/modular-kitchen/',
+        image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'proj-2',
+        title: 'Master Suite Wardrobe',
+        location: 'Bhubaneswar',
+        category: 'Bedroom',
+        route: '/services/wardrobe-design/',
+        image: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'proj-3',
+        title: 'Bespoke Living Room & TV Unit',
+        location: 'Bhubaneswar',
+        category: 'Living',
+        route: '/services/modular-furniture/',
+        image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'proj-4',
+        title: 'Executive Office Workspace',
+        location: 'Bhubaneswar',
+        category: 'Office',
+        route: '/services/office-furniture/',
+        image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'proj-5',
+        title: 'Sliding Wardrobe & Dressing Unit',
+        location: 'Cuttack',
+        category: 'Bedroom',
+        route: '/services/wardrobe-design/',
+        image: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'proj-6',
+        title: 'Parallel Modular Kitchen',
+        location: 'Bhubaneswar',
+        category: 'Kitchen',
+        route: '/services/modular-kitchen/',
+        image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=800&q=80'
+      }
+    ];
+
+    let currentSlide = 0;
+    let activeProjectFilter = 'all';
+    let showAllProjects = false;
+
+    function createServiceCardElement(srv, index) {
+      const card = document.createElement('a');
+      card.href = srv.route;
+      let layoutClasses = '';
+      if (index === 0) {
+        layoutClasses = 'vz-service-card--featured md:col-span-2 lg:col-span-7 lg:row-span-2 min-h-[380px] sm:min-h-[440px] lg:min-h-[580px]';
+      } else if (index === 1 || index === 2) {
+        layoutClasses = 'md:col-span-1 lg:col-span-5 min-h-[280px] sm:min-h-[300px] lg:min-h-[278px]';
+      } else {
+        layoutClasses = 'md:col-span-1 lg:col-span-4 min-h-[270px] sm:min-h-[290px] lg:min-h-[310px]';
+      }
+
+      card.className = `vz-service-card vz-reveal group rounded-sm overflow-hidden border border-charcoal/10 flex flex-col justify-between focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-walnut-600 ${layoutClasses}`;
+      card.style.setProperty('--vz-delay', `${Math.min(index * 75, 375)}ms`);
+
+      // Media wrapper
+      const mediaWrap = document.createElement('div');
+      mediaWrap.className = 'absolute inset-0 overflow-hidden bg-olive-900';
+
+      const img = document.createElement('img');
+      img.src = srv.image;
+      img.alt = srv.alt || srv.title;
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.className = 'vz-service-img w-full h-full object-cover object-center';
+
+      const overlay = document.createElement('div');
+      overlay.className = 'vz-service-overlay absolute inset-0';
+
+      mediaWrap.appendChild(img);
+      mediaWrap.appendChild(overlay);
+
+      // Top bar (Number badge + subtle category pill on featured)
+      const topBar = document.createElement('div');
+      topBar.className = 'relative z-10 p-5 sm:p-6 lg:p-7 flex items-center justify-between';
+
+      const numBadge = document.createElement('span');
+      numBadge.className = 'font-serif text-xs sm:text-sm tracking-[0.2em] text-taupe/90 border border-taupe/30 bg-olive-900/45 backdrop-blur-[2px] px-2.5 py-1 rounded-sm';
+      numBadge.textContent = srv.number || String(index + 1).padStart(2, '0');
+      topBar.appendChild(numBadge);
+
+      if (srv.featured) {
+        const badge = document.createElement('span');
+        badge.className = 'text-[10px] uppercase tracking-[0.24em] text-alabaster/90 bg-walnut-700/80 px-3 py-1 rounded-sm font-medium';
+        badge.textContent = 'Signature Craft';
+        topBar.appendChild(badge);
+      }
+
+      // Bottom Content Area
+      const content = document.createElement('div');
+      content.className = srv.featured
+        ? 'relative z-10 p-6 sm:p-8 lg:p-9 mt-auto'
+        : 'relative z-10 p-5 sm:p-6 lg:p-7 mt-auto';
+
+      const titleEl = document.createElement('h3');
+      titleEl.className = srv.featured
+        ? 'font-serif text-2xl sm:text-3xl lg:text-4xl text-alabaster font-medium tracking-tight mb-2'
+        : 'font-serif text-xl sm:text-2xl text-alabaster font-medium tracking-tight mb-1.5';
+      titleEl.textContent = srv.title;
+
+      const descEl = document.createElement('p');
+      descEl.className = srv.featured
+        ? 'text-xs sm:text-sm text-sand/90 leading-relaxed max-w-lg'
+        : 'text-xs text-sand/85 leading-relaxed line-clamp-2';
+      descEl.textContent = srv.desc;
+
+      content.appendChild(titleEl);
+      content.appendChild(descEl);
+
+      if (srv.featured && srv.featuredNote) {
+        const noteEl = document.createElement('p');
+        noteEl.className = 'hidden sm:block text-xs text-taupe/80 leading-relaxed max-w-lg mt-2';
+        noteEl.textContent = srv.featuredNote;
+        content.appendChild(noteEl);
+      }
+
+      const ctaRow = document.createElement('div');
+      ctaRow.className = 'mt-4 pt-3.5 border-t border-alabaster/15 flex items-center justify-between text-[11px] uppercase tracking-[0.18em] font-medium text-taupe group-hover:text-alabaster transition-colors';
+
+      const ctaLabel = document.createElement('span');
+      ctaLabel.textContent = 'Explore Service';
+
+      const ctaArrow = document.createElement('span');
+      ctaArrow.className = 'vz-service-arrow text-sm text-walnut-500 group-hover:text-taupe';
+      ctaArrow.setAttribute('aria-hidden', 'true');
+      ctaArrow.innerHTML = '&rarr;';
+
+      ctaRow.appendChild(ctaLabel);
+      ctaRow.appendChild(ctaArrow);
+      content.appendChild(ctaRow);
+
+      card.appendChild(mediaWrap);
+      card.appendChild(topBar);
+      card.appendChild(content);
+
+      return card;
+    }
+
+    let servicesObserver = null;
+
+    function initServicesReveal() {
+      const revealEls = document.querySelectorAll('#services .vz-reveal');
+      if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        revealEls.forEach(el => el.classList.add('is-visible'));
+        return;
+      }
+
+      if (servicesObserver) {
+        servicesObserver.disconnect();
+      }
+
+      servicesObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        rootMargin: '0px 0px -8% 0px',
+        threshold: 0.12
+      });
+
+      revealEls.forEach(el => servicesObserver.observe(el));
+    }
+
+    function renderServices() {
+      const container = document.getElementById('services-grid');
+      if (!container) return;
+
+      container.replaceChildren();
+      const fragment = document.createDocumentFragment();
+
+      servicesData.forEach((srv, idx) => {
+        fragment.appendChild(createServiceCardElement(srv, idx));
+      });
+
+      container.appendChild(fragment);
+      initServicesReveal();
+    }
+
+    function renderProjects() {
+      const container = document.getElementById('projects-grid');
+      const filtered = projectsData.filter(p => activeProjectFilter === 'all' || p.category === activeProjectFilter);
+      const visible = (showAllProjects || activeProjectFilter !== 'all') ? filtered : filtered.slice(0, 4);
+
+      container.innerHTML = visible.map(proj => `
+        <a href="${proj.route}" class="project-card group block fade-in">
+          <div class="aspect-[4/3] overflow-hidden bg-stone-200 rounded-sm mb-3.5 relative">
+            <img src="${proj.image}" alt="${proj.title}" loading="lazy" class="project-img w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-colors flex items-end p-4">
+              <span class="opacity-0 group-hover:opacity-100 transition-opacity bg-white/95 text-charcoal text-[11px] font-medium px-3 py-1.5 rounded-full shadow">
+                Explore ${proj.category} Solutions &rarr;
+              </span>
+            </div>
+          </div>
+          <h3 class="text-sm font-semibold text-white group-hover:text-[#FE8801] transition-colors">${proj.title}</h3>
+          <p class="text-[11px] text-stone-400 mt-0.5">${proj.location} &bull; ${proj.category}</p>
+        </a>
+      `).join('');
+
+      const viewAllLabel = document.getElementById('view-all-projects-label');
+      if (activeProjectFilter !== 'all') {
+        viewAllLabel.textContent = `Showing ${visible.length} ${activeProjectFilter} Inspiration(s)`;
+      } else {
+        viewAllLabel.textContent = showAllProjects ? 'Show Featured (4)' : 'View All (6)';
+      }
+    }
+
+    function setHeroSlide(index) {
+      currentSlide = (index + heroSlides.length) % heroSlides.length;
+      const slide = heroSlides[currentSlide];
+      document.getElementById('hero-bg-img').src = slide.image;
+      document.getElementById('hero-kicker').textContent = slide.kicker;
+      document.getElementById('hero-headline').innerHTML = slide.headline;
+      document.getElementById('hero-subtext').textContent = slide.subtext;
+
+      document.querySelectorAll('.hero-dot').forEach((dot, idx) => {
+        dot.className = idx === currentSlide
+          ? 'hero-dot h-1 w-9 bg-white rounded-full transition-all duration-300'
+          : 'hero-dot h-1 w-4 bg-white/40 hover:bg-white/70 rounded-full transition-all duration-300';
+      });
+    }
+
+    function openConsultationModal() {
+      const modal = document.getElementById('consultation-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeConsultationModal() {
+      const modal = document.getElementById('consultation-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderServices();
+      renderProjects();
+
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const openIcon = document.getElementById('mobile-menu-icon-open');
+      const closeIcon = document.getElementById('mobile-menu-icon-close');
+
+      mobileMenuBtn.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        mobileMenu.classList.toggle('hidden', !isHidden);
+        openIcon.classList.toggle('hidden', isHidden);
+        closeIcon.classList.toggle('hidden', !isHidden);
+      });
+
+      document.getElementById('hero-prev-btn').addEventListener('click', () => setHeroSlide(currentSlide - 1));
+      document.getElementById('hero-next-btn').addEventListener('click', () => setHeroSlide(currentSlide + 1));
+      document.querySelectorAll('.hero-dot').forEach(dot => {
+        dot.addEventListener('click', () => setHeroSlide(parseInt(dot.getAttribute('data-slide'), 10)));
+      });
+
+      document.getElementById('header-consult-btn').addEventListener('click', openConsultationModal);
+      document.getElementById('mobile-consult-btn').addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        openConsultationModal();
+      });
+      document.getElementById('hero-consult-btn').addEventListener('click', openConsultationModal);
+      document.getElementById('banner-consult-btn').addEventListener('click', openConsultationModal);
+      document.getElementById('close-consult-modal').addEventListener('click', closeConsultationModal);
+      document.getElementById('cancel-consult-btn').addEventListener('click', closeConsultationModal);
+
+      document.getElementById('consultation-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('consult-name').value.trim();
+        const phone = document.getElementById('consult-phone').value.trim();
+        const service = document.getElementById('consult-service').value;
+        const location = document.getElementById('consult-location').value.trim();
+        const notes = document.getElementById('consult-notes').value.trim();
+        closeConsultationModal();
+
+        const waMsg = encodeURIComponent(
+          `Hello Vizous Interio Team,\n\nI would like to book a consultation:\n` +
+          `• Name: ${name}\nPhone: ${phone}\nService: ${service}\nLocation: ${location}\nNotes: ${notes || 'Standard inquiry'}`
+        );
+        window.open(`https://wa.me/919938117844?text=${waMsg}`, '_blank', 'noopener');
+      });
+
+      document.getElementById('discover-story-btn').addEventListener('click', () => {
+        document.getElementById('detail-modal-title').textContent = 'In-House Manufacturing in Bhubaneswar';
+        document.getElementById('detail-modal-body').innerHTML = `
+          <p class="text-sm text-charcoal font-medium">Vizous Interio Private Limited operates its own dedicated modular furniture factory at Plot #12, Bhagabanpur Industrial Estate, Patrapada, Bhubaneswar.</p>
+          <p class="mt-2">By combining architectural design at our Laxmisagar Corporate Studio with direct factory production and trained in-house installation experts, we deliver 100% customized kitchens, wardrobes, and office furniture backed by a 10-year warranty.</p>
+        `;
+        const modal = document.getElementById('detail-modal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      });
+
+      document.getElementById('close-detail-modal').addEventListener('click', () => {
+        const modal = document.getElementById('detail-modal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      });
+
+      document.getElementById('detail-modal-cta').addEventListener('click', () => {
+        document.getElementById('detail-modal').classList.add('hidden');
+        openConsultationModal();
+      });
+
+      document.querySelectorAll('.project-filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          activeProjectFilter = btn.getAttribute('data-filter');
+          document.querySelectorAll('.project-filter-btn').forEach(b => {
+            b.className = 'project-filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium text-stone-300 hover:text-[#FE8801] transition-all';
+          });
+          btn.className = 'project-filter-btn active px-3.5 py-1.5 rounded-full text-xs font-medium bg-[#FE8801] text-black transition-all';
+          renderProjects();
+        });
+      });
+
+      document.getElementById('view-all-projects-btn').addEventListener('click', () => {
+        activeProjectFilter = 'all';
+        showAllProjects = !showAllProjects;
+        renderProjects();
+      });
+
+      const servicesConsultBtn = document.getElementById('services-consult-btn');
+      if (servicesConsultBtn) {
+        servicesConsultBtn.addEventListener('click', openConsultationModal);
+      }
+    });
+  </script>
+</body>
+
+</html>

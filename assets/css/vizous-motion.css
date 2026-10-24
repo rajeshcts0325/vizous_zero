@@ -1,0 +1,444 @@
+/* Vizous shared motion system — reusable across all service pages.
+   Include after vizous-tokens.css. Uses the v- prefix to avoid collisions. */
+:root {
+  --v-ink: #1d211f;
+  --v-walnut: #9c734b;
+  --v-cream: #f2ece4;
+  --v-motion-ease: cubic-bezier(.22, .61, .36, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  cursor: auto;
+}
+
+.v-hero {
+  isolation: isolate;
+}
+
+.v-hero-media,
+.v-hero-shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.v-hero-video,
+.v-hero-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.v-hero-poster {
+  z-index: -1;
+}
+
+.v-hero-video {
+  z-index: 0;
+  animation: vHeroReveal 1.2s var(--v-motion-ease) both;
+}
+
+.v-hero-shade {
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(16, 20, 17, .82) 0%, rgba(16, 20, 17, .5) 48%, rgba(16, 20, 17, .14) 100%), linear-gradient(0deg, rgba(16, 20, 17, .55), transparent 55%);
+}
+
+.v-cursor-glow {
+  position: absolute;
+  z-index: 2;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(224, 201, 169, .15), rgba(224, 201, 169, 0) 68%);
+  transition: opacity .3s ease;
+}
+
+.v-hero:hover .v-cursor-glow {
+  opacity: 1;
+}
+
+.v-eyebrow {
+  font: 500 10px/1.4 Inter, system-ui, sans-serif;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--v-walnut);
+}
+
+.v-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .8rem;
+  min-height: 48px;
+  padding: .85rem 1.35rem;
+  border-radius: 999px;
+  font: 500 12px/1.3 Inter, system-ui, sans-serif;
+  transition: transform .3s var(--v-motion-ease), background .3s ease, color .3s ease, box-shadow .3s ease;
+}
+
+.v-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .14);
+}
+
+.v-button:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #b68a5d;
+  outline-offset: 4px;
+}
+
+.v-button-outline {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, .5);
+  background: rgba(255, 255, 255, .07);
+}
+
+.v-button-outline:hover {
+  background: rgba(255, 255, 255, .16);
+}
+
+.v-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .8s var(--v-motion-ease), transform .8s var(--v-motion-ease);
+}
+
+.v-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.v-reveal:nth-child(2) {
+  transition-delay: 70ms;
+}
+
+.v-reveal:nth-child(3) {
+  transition-delay: 130ms;
+}
+
+.v-reveal:nth-child(4) {
+  transition-delay: 190ms;
+}
+
+.v-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 270px;
+  gap: 14px;
+}
+
+.v-card {
+  position: relative;
+  min-height: 260px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #d9d2c8;
+  color: #fff;
+}
+
+.v-card-large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.v-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s var(--v-motion-ease), filter .7s ease;
+}
+
+.v-card:hover img {
+  transform: scale(1.055);
+  filter: saturate(1.05);
+}
+
+.v-card-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(14, 17, 15, .82), rgba(14, 17, 15, .08) 68%);
+  transition: background .4s ease;
+}
+
+.v-card:hover .v-card-shade {
+  background: linear-gradient(0deg, rgba(14, 17, 15, .9), rgba(14, 17, 15, .12) 85%);
+}
+
+.v-card-copy {
+  position: absolute;
+  left: clamp(18px, 3vw, 32px);
+  right: 54px;
+  bottom: clamp(20px, 3vw, 30px);
+  transform: translateY(8px);
+  transition: transform .4s var(--v-motion-ease);
+}
+
+.v-card:hover .v-card-copy {
+  transform: translateY(0);
+}
+
+.v-card-copy span {
+  display: block;
+  font: 500 9px/1.4 Inter, sans-serif;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #e4c9a7;
+  margin-bottom: 8px;
+}
+
+.v-card-copy h3 {
+  font: 500 clamp(24px, 3vw, 36px)/.98 "Cormorant Garamond", Georgia, serif;
+}
+
+.v-card:not(.v-card-large) .v-card-copy h3 {
+  font-size: clamp(22px, 2.1vw, 29px);
+}
+
+.v-card-copy p {
+  margin-top: 9px;
+  max-width: 330px;
+  color: rgba(255, 255, 255, .76);
+  font: 300 11px/1.6 Inter, sans-serif;
+}
+
+.v-card-arrow {
+  position: absolute;
+  right: 22px;
+  bottom: 23px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, .45);
+  border-radius: 50%;
+  transition: transform .3s ease, background .3s ease;
+}
+
+.v-card:hover .v-card-arrow {
+  transform: rotate(45deg);
+  background: rgba(255, 255, 255, .16);
+}
+
+.v-image-frame {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  background: #d7d0c5;
+}
+
+.v-image-frame img {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+  transition: transform 1.2s var(--v-motion-ease);
+}
+
+.v-image-frame:hover img {
+  transform: scale(1.035);
+}
+
+.v-image-caption {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  color: white;
+  background: rgba(25, 30, 27, .72);
+  backdrop-filter: blur(12px);
+  font: 500 9px/1.4 Inter, sans-serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.v-feature-list {
+  border-top: 1px solid rgba(29, 33, 31, .16);
+}
+
+.v-feature-list li {
+  display: flex;
+  gap: 18px;
+  padding: 17px 0;
+  border-bottom: 1px solid rgba(29, 33, 31, .16);
+}
+
+.v-feature-list li>span,
+.v-step>span {
+  color: var(--v-walnut);
+  font: 500 10px/1.5 Inter, sans-serif;
+  letter-spacing: .12em;
+}
+
+.v-feature-list strong {
+  font: 500 15px/1.4 Inter, sans-serif;
+}
+
+.v-feature-list p,
+.v-step p {
+  margin-top: 4px;
+  color: #716d66;
+  font: 300 12px/1.65 Inter, sans-serif;
+}
+
+.v-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid #d9d1c7;
+}
+
+.v-step {
+  padding: 24px 20px 0 0;
+}
+
+.v-step h3 {
+  margin-top: 16px;
+  font: 500 30px/1 "Cormorant Garamond", Georgia, serif;
+}
+
+.v-step p {
+  max-width: 210px;
+  margin-top: 10px;
+}
+
+.v-magnetic {
+  will-change: transform;
+}
+
+@keyframes vHeroReveal {
+  from {
+    transform: scale(1.04);
+    opacity: .7;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (pointer:fine) and (min-width:900px) {
+
+  body.v-custom-cursor,
+  body.v-custom-cursor a,
+  body.v-custom-cursor button {
+    cursor: none;
+  }
+
+  .v-cursor-dot,
+  .v-cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    pointer-events: none;
+    border-radius: 50%;
+    opacity: 0;
+  }
+
+  .v-cursor-dot {
+    width: 6px;
+    height: 6px;
+    margin: -3px 0 0 -3px;
+    background: #d9b58c;
+  }
+
+  .v-cursor-ring {
+    width: 34px;
+    height: 34px;
+    margin: -17px 0 0 -17px;
+    border: 1px solid rgba(217, 181, 140, .85);
+    transition: width .2s, height .2s, margin .2s, background .2s;
+  }
+
+  body.v-custom-cursor .v-cursor-dot,
+  body.v-custom-cursor .v-cursor-ring {
+    opacity: 1;
+  }
+
+  body.v-cursor-hover .v-cursor-ring {
+    width: 52px;
+    height: 52px;
+    margin: -26px 0 0 -26px;
+    background: rgba(217, 181, 140, .12);
+  }
+}
+
+@media (max-width:800px) {
+  .v-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 240px;
+  }
+
+  .v-card-large {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .v-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 26px;
+  }
+}
+
+@media (max-width:520px) {
+  .v-gallery {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 290px;
+  }
+
+  .v-card-large {
+    grid-column: span 1;
+  }
+
+  .v-card-copy h3 {
+    font-size: 29px;
+  }
+
+  .v-image-frame,
+  .v-image-frame img {
+    min-height: 340px;
+  }
+
+  .v-image-caption {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .v-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
